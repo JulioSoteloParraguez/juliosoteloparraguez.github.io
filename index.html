@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julio A. Sotelo Parraguez - CV & Portfolio</title>
+    <style>
+        :root {
+            --header-bg-1: #0a1128;
+            --header-bg-2: #1c3144;
+            --primary-color: #64b5f6;
+            --secondary-color: #4dd0e1;
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --light-bg: #1e1e1e;
+            --border-color: #333333;
+            --text-muted: #aaaaaa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--header-bg-1) 0%, var(--header-bg-2) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.1);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+
+        header h2 {
+            margin: 0.5rem 0 1.5rem 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+            color: #b0bec5;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.3s, color 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+            color: white;
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+        }
+
+        h2.section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+        }
+
+        .bio-text {
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item-year {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #ffffff;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .paper-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .paper-item:last-child {
+            border-bottom: none;
+        }
+
+        .paper-year {
+            flex: 0 0 60px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .paper-content {
+            flex: 1;
+        }
+
+        .paper-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--primary-color);
+        }
+
+        .paper-authors {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            color: #cccccc;
+        }
+
+        .paper-journal {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .badge {
+            background-color: var(--border-color);
+            color: var(--secondary-color);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-left: 10px;
+            vertical-align: middle;
+            border: 1px solid var(--secondary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 1rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+            .paper-item {
+                flex-direction: column;
+            }
+            .paper-year {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="foto.jpg" alt="Julio A. Sotelo Parraguez" class="profile-img">
+        <h1>Julio A. Sotelo Parraguez</h1>
+        <h2>Assistant Professor, Universidad Técnica Federico Santa María & Adjunct Senior Lecturer, Monash University</h2>
+        
+        <div class="contact-info">
+            <a href="mailto:julio.sotelo@usm.cl">✉️ julio.sotelo@usm.cl</a>
+            <a href="https://scholar.google.com/citations?user=aqhjvOQAAAAJ&hl=pt-PT" target="_blank">🎓 Google Scholar</a>
+            <a href="https://www.linkedin.com/in/juliosoteloparraguez" target="_blank">🔗 LinkedIn</a>
+            <a href="https://orcid.org/0000-0002-0915-5215" target="_blank">🆔 ORCID</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Biografía -->
+        <section id="biography">
+            <h2 class="section-title">Biografía</h2>
+            <div class="bio-text">
+                <p>Soy Profesor Asistente en el Departamento de Informática de la Universidad Técnica Federico Santa María en Santiago, Chile. También me desempeño como Profesor Titular Adjunto en el Departamento de Imágenes Médicas y Ciencias de la Radiación de la Universidad de Monash, Australia, y como Investigador Principal en el Instituto Milenio de Ingeniería Inteligente en Salud (iHEALTH).</p>
+                <p>Poseo una formación académica multidisciplinar que integra a la perfección la ingeniería con la ciencia de datos. Comencé mi carrera en la Universidad de Valparaíso, donde obtuve el título de Ingeniero Civil Biomédico en 2009 y un Magíster en Ciencias de la Ingeniería con mención en Ingeniería Biomédica en 2011.</p>
+                <p>En 2016, obtuve mi Doctorado en Ciencias de la Ingeniería y un segundo Magíster en la Pontificia Universidad Católica de Chile (PUC). Tras mis estudios de doctorado, realicé una beca postdoctoral de cuatro años (2016-2020) en el Centro de Imágenes Biomédicas (CIB) de la PUC y en el Departamento de Ingeniería Eléctrica. Durante este tiempo, también fui investigador en el Núcleo Milenio CardioMR. Para ampliar mi experiencia técnica, obtuve un Magíster en Data Science de la Universidad del Desarrollo en 2022.</p>
+                <p>Mis principales áreas de investigación incluyen el procesamiento de imágenes biomédicas, la resonancia magnética (RM) cardiovascular y la biomecánica. En los últimos 12 años, he desarrollado diversos métodos numéricos para extraer información cuantitativa a partir de datos de 4D Flow MRI, con un enfoque en acelerar la traslación clínica de estos desarrollos.</p>
+            </div>
+        </section>
+
+        <!-- Proyectos de Investigación -->
+        <section id="projects">
+            <h2 class="section-title">Proyectos de Investigación Destacados</h2>
+            <ul class="item-list">
+                <li class="item">
+                    <div class="item-title"><span class="item-year">2026-2029</span> Multi-Modal Estimation of Advanced Hemodynamic Parameters in 4D Flow MRI and Echocardiography, using Neural Networks</div>
+                    <div class="item-desc"><strong>Rol:</strong> Investigador Principal (PI) | <strong>Fondo:</strong> ANID-FONDECYT 1261167 | <strong>Monto:</strong> USD$ 264.824</div>
+                </li>
+                <li class="item">
+                    <div class="item-title"><span class="item-year">2025-2026</span> Validación de modelos de simulación computacional de fluidos y redes neuronales informadas por la física</div>
+                    <div class="item-desc"><strong>Rol:</strong> Investigador Principal (PI) | <strong>Fondo:</strong> Proyecto Multidisciplinario Interno UTFSM PI_M_25_03 | <strong>Monto:</strong> USD$ 18.000</div>
+                </li>
+                <li class="item">
+                    <div class="item-title"><span class="item-year">2023-2025</span> Cuantificación automática de densidad mamaria usando Inteligencia Artificial, como herramienta de apoyo en pesquisa de cáncer mamario: mamAI-dens</div>
+                    <div class="item-desc"><strong>Rol:</strong> Co-Investigador Principal (Co-PI) | <strong>Fondo:</strong> ANID-FONDEF IT23I0040 | <strong>Monto:</strong> USD$ 224.498</div>
+                </li>
+                <li class="item">
+                    <div class="item-title"><span class="item-year">2022-2031</span> Millennium Institute for Intelligent Healthcare Engineering – iHEALTH</div>
+                    <div class="item-desc"><strong>Rol:</strong> Investigador Principal (PI) | <strong>Fondo:</strong> ANID – Millennium Science Initiative Program – ICN2021_004 | <strong>Monto:</strong> USD$ 10.594.005</div>
+                </li>
+                <li class="item">
+                    <div class="item-title"><span class="item-year">2020-2023</span> Deep-Learning-Atlas-Based method to optimize the postprocessing and evaluation of cardiovascular index and biomarkers from MRI</div>
+                    <div class="item-desc"><strong>Rol:</strong> Investigador Principal (PI) | <strong>Fondo:</strong> FONDECYT de iniciación 11200481 | <strong>Monto:</strong> USD$ 87.082</div>
+                </li>
+                <li class="item">
+                    <div class="item-title"><span class="item-year">2018-2021</span> Millennium Nucleus in Cardiovascular Magnetic Resonance (CardioMR)</div>
+                    <div class="item-desc"><strong>Rol:</strong> Young Researcher | <strong>Fondo:</strong> ANID – Millennium Science Initiative Program – NCN17_129</div>
+                </li>
+                <li class="item">
+                    <div class="item-title"><span class="item-year">2017-2020</span> Acceleration and validation of 4D flow data acquisitions obtained by cardiovascular magnetic resonance</div>
+                    <div class="item-desc"><strong>Rol:</strong> Investigador Principal (PI) | <strong>Fondo:</strong> CONICYT-FONDECYT Postdoctorado 3170737</div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Publicaciones -->
+        <section id="publications">
+            <h2 class="section-title">Publicaciones Científicas (WoS / SCIELO)</h2>
+            <div class="item-list">
+                
+                <div class="paper-item">
+                    <div class="paper-year">2026</div>
+                    <div class="paper-content">
+                        <div class="paper-title">AdaPR: Adaptive Plane Reformatting for 4D flow MRI using deep reinforcement learning <span class="badge">WoS - IF: 6.4</span></div>
+                        <div class="paper-authors">Bisbal J, Sotelo J, Valdes MI, Irarrazaval P, Andia ME, García J, Rodriguez-Palomares J, Raimondi F, Tejos C, Uribe S.</div>
+                        <div class="paper-journal">Computer Methods and Programs in Biomedicine. https://doi.org/10.1016/j.cmpb.2026.109546</div>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-year">2026</div>
+                    <div class="paper-content">
+                        <div class="paper-title">The Relationship between vortical flow and pressure gradient reversal in Pulmonary Hypertension—A 4D Analysis of cardiovascular magnetic resonance Flow Imaging <span class="badge">WoS - IF: 2.4</span></div>
+                        <div class="paper-authors">Karim, R., Fyrdahl, A., Ramos, J. G., Melin, M., Sundblad, P., Sotelo, J., Wieslander, B., & Marlevi, D.</div>
+                        <div class="paper-journal">Pulmonary Circulation, 16(3). https://doi.org/10.1002/pul2.70350</div>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-year">2025</div>
+                    <div class="paper-content">
+                        <div class="paper-title">AI Applied to Cardiac Magnetic Resonance for Precision Medicine in Coronary Artery Disease: A Systematic Review <span class="badge">WoS - IF: 2.3</span></div>
+                        <div class="paper-authors">Jiménez-Jara, C., Salas, R., Díaz-Navarro, R., Chabert, S., Andia, M. E., Vega, J., Urbina, J., Uribe, S., Sekine, T., Raimondi, F., & Sotelo, J.</div>
+                        <div class="paper-journal">Journal of Cardiovascular Development and Disease, 12(9), 345.</div>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-year">2025</div>
+                    <div class="paper-content">
+                        <div class="paper-title">Physics-Informed Neural Network for Modeling the Pulmonary Artery Blood Pressure from Magnetic Resonance Images: A Reduced-Order Navier–Stokes Model <span class="badge">WoS - IF: 3.9</span></div>
+                        <div class="paper-authors">Jara, S., Sotelo, J., Ortiz-Puerta, D., Estévez, P. A., Uribe, S., Chabert, S., & Salas, R.</div>
+                        <div class="paper-journal">Biomedicines, 13(9), 2058.</div>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-year">2023</div>
+                    <div class="paper-content">
+                        <div class="paper-title">4D Flow cardiovascular magnetic resonance consensus statement: 2023 update <span class="badge">WoS - IF: 6.903</span></div>
+                        <div class="paper-authors">Bissell, M.M., Raimondi, F., Ait Ali, L. et al.</div>
+                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance 25, 40 (2023).</div>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-year">2022</div>
+                    <div class="paper-content">
+                        <div class="paper-title">Fully Three-Dimensional Hemodynamic Characterization of Altered Blood Flow in Bicuspid Aortic Valve Patients With Respect to Aortic Dilatation: A Finite Element Approach <span class="badge">WoS - IF: 6.05</span></div>
+                        <div class="paper-authors">Sotelo J, Franco P, Guala A, Dux-Santoy L, Ruiz-Muñoz A, Evangelista A, Mella H, Mura J, Hurtado DE, Rodríguez-Palomares JF, Uribe S.</div>
+                        <div class="paper-journal">Frontiers in Cardiovascular Medicine. 2022 May 18;9:885338.</div>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-year">2021</div>
+                    <div class="paper-content">
+                        <div class="paper-title">False lumen pressure estimation in type B aortic dissection using 4D flow cardiovascular magnetic resonance: comparisons with aortic growth <span class="badge">WoS - IF: 6.903</span></div>
+                        <div class="paper-authors">Marlevi D, Sotelo J, Grogan-Kaylor R, Ahmed Y, Uribe S, Patel HJ, Edelman ER, Nordsletten DA, Burris NS.</div>
+                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance 23, 51 (2021).</div>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-year">2018</div>
+                    <div class="paper-content">
+                        <div class="paper-title">3D axial and circumferential wall shear stress from 4D flow MRI data using a finite element method and a laplacian approach <span class="badge">WoS - IF: 4.668</span></div>
+                        <div class="paper-authors">Sotelo J, Dux-Santoy L, Guala A, Rodríguez-Palomares J, Evangelista A, Sing-Long C, Urbina J, Mura J, Hurtado DE, Uribe S.</div>
+                        <div class="paper-journal">Magnetic Resonance in Medicine. 2018 May;79(5):2816-2823.</div>
+                    </div>
+                </div>
+
+                <div class="paper-item">
+                    <div class="paper-year">2016</div>
+                    <div class="paper-content">
+                        <div class="paper-title">3D quantification of wall shear stress and oscillatory shear index using a finite-element method in 3D CINE PC-MRI data of the thoracic aorta <span class="badge">WoS - IF: 10.05</span></div>
+                        <div class="paper-authors">Sotelo J, Urbina J, Valverde I, Tejos C, Irarrazaval P, Andia ME, Uribe S, Hurtado DE.</div>
+                        <div class="paper-journal">IEEE transactions on medical imaging. 2016 Jun;35(6):1475-87.</div>
+                    </div>
+                </div>
+
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">
+                * Lista parcial de publicaciones destacadas. Para el listado completo, por favor referirse a los perfiles de Google Scholar o ResearchGate indicados en el encabezado.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Julio A. Sotelo Parraguez. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
