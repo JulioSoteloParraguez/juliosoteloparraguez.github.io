@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julio A. Sotelo Parraguez - CV & Portfolio</title>
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio and CV of Dr. Julio A. Sotelo Parraguez, Assistant Professor at UTFSM and Adjunct Senior Lecturer at Monash University, specializing in 4D Flow MRI, Biomedical Image Processing, and Artificial Intelligence.">
-    <meta name="keywords" content="Julio A. Sotelo Parraguez, 4D Flow MRI, Biomedical Engineering, Cardiovascular MRI, Data Science, UTFSM, Monash University, iHEALTH, Biomechanics">
+    <meta name="description"
+        content="Portfolio and CV of Dr. Julio A. Sotelo Parraguez, Assistant Professor at UTFSM and Adjunct Senior Lecturer at Monash University, specializing in 4D Flow MRI, Biomedical Image Processing, and Artificial Intelligence.">
+    <meta name="keywords"
+        content="Julio A. Sotelo Parraguez, 4D Flow MRI, Biomedical Engineering, Cardiovascular MRI, Data Science, UTFSM, Monash University, iHEALTH, Biomechanics">
     <meta name="author" content="Julio A. Sotelo Parraguez">
-    
+
     <!-- Open Graph for Social Media sharing -->
     <meta property="og:title" content="Julio A. Sotelo Parraguez - Academic Portfolio">
-    <meta property="og:description" content="Assistant Professor at UTFSM focusing on Biomedical Image Processing, Cardiovascular MRI, and Biomechanics. Explore my research, publications, and projects.">
-    <meta property="og:image" content="foto.jpg">
+    <meta property="og:description"
+        content="Assistant Professor at UTFSM focusing on Biomedical Image Processing, Cardiovascular MRI, and Biomechanics. Explore my research, publications, and projects.">
+    <meta property="og:image" content="files/PhotoJS.jpg">
     <meta property="og:type" content="website">
-    
+
     <style>
         :root {
             --header-bg-1: #0a1128;
@@ -29,6 +33,10 @@
             --text-muted: #aaaaaa;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
@@ -36,69 +44,201 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         header {
             background: linear-gradient(135deg, var(--header-bg-1) 0%, var(--header-bg-2) 100%);
             color: white;
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem 3rem 2rem;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
             border-bottom: 2px solid var(--secondary-color);
         }
 
         .profile-img {
-            width: 220px;
-            height: 220px;
+            width: 210px;
+            height: 210px;
             border-radius: 50%;
-            border: 6px solid rgba(255, 255, 255, 0.1);
+            border: 5px solid rgba(255, 255, 255, 0.15);
             object-fit: cover;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            margin-bottom: 1.25rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+            border-color: var(--secondary-color);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         header h2 {
-            margin: 0.5rem 0 1.5rem 0;
-            font-size: 1.2rem;
+            margin: 0.5rem auto 1.5rem auto;
+            font-size: 1.15rem;
             font-weight: 400;
             opacity: 0.9;
             color: #b0bec5;
+            max-width: 850px;
+            line-height: 1.5;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 0.85rem 1rem;
+            margin-top: 1.5rem;
             font-size: 0.95rem;
         }
 
         .contact-info a {
             color: var(--secondary-color);
             text-decoration: none;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: opacity 0.3s, color 0.3s;
+            gap: 0.55rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 30px;
+            transition: all 0.25s ease;
+            font-weight: 500;
         }
 
         .contact-info a:hover {
-            opacity: 0.8;
-            color: white;
-            text-decoration: underline;
+            color: #ffffff;
+            background: rgba(100, 181, 246, 0.18);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+        }
+
+        .contact-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-img-icon {
+            height: 22px;
+            width: auto;
+            object-fit: contain;
+            vertical-align: middle;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .utfsm-logo {
+            height: 24px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+        }
+
+        .ihealth-logo {
+            height: 18px;
+            background-color: #ffffff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Top Navigation Tabs */
+        .tabs-nav-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(18, 18, 18, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            padding: 0.75rem 1rem;
+        }
+
+        .tabs-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.65rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+            user-select: none;
+            font-family: inherit;
+        }
+
+        .tab-btn:hover {
+            color: #ffffff;
+            background: #282828;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, rgba(100, 181, 246, 0.15), rgba(77, 208, 225, 0.15));
+            border-color: var(--secondary-color);
+            color: var(--primary-color);
+            box-shadow: 0 0 16px rgba(77, 208, 225, 0.25);
+        }
+
+        .tab-badge {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: var(--secondary-color);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(77, 208, 225, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn.active .tab-badge {
+            background-color: var(--secondary-color);
+            color: #0a1128;
+            border-color: var(--secondary-color);
         }
 
         main {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
+            min-height: 50vh;
+        }
+
+        /* Tab Panes Animation */
+        .tab-pane {
+            display: none;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .tab-pane.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         section {
@@ -106,7 +246,7 @@
             border-radius: 12px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             border: 1px solid var(--border-color);
         }
 
@@ -119,7 +259,7 @@
             border-bottom: 2px solid var(--border-color);
             display: inline-block;
         }
-        
+
         h3.subsection-title {
             color: var(--secondary-color);
             font-size: 1.4rem;
@@ -132,6 +272,15 @@
         .bio-text {
             font-size: 1.05rem;
             text-align: justify;
+        }
+
+        .bio-text p {
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+        }
+
+        .bio-text p:last-child {
+            margin-bottom: 0;
         }
 
         .item-list {
@@ -172,8 +321,9 @@
             align-items: flex-start;
             padding: 1.2rem 0;
             border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s ease;
         }
-        
+
         .paper-item:last-child {
             border-bottom: none;
         }
@@ -192,6 +342,8 @@
             font-weight: 600;
             margin-bottom: 0.3rem;
             color: var(--primary-color);
+            font-size: 1.05rem;
+            line-height: 1.4;
         }
 
         .paper-authors {
@@ -202,10 +354,22 @@
 
         .paper-journal {
             font-style: italic;
+        }
+
+        .paper-journal a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            word-break: break-all;
+            transition: color 0.2s ease, text-decoration 0.2s ease;
+        }
+
+        .paper-journal a:hover {
+            color: #ffffff;
+            text-decoration: underline;
             font-size: 0.9rem;
             color: var(--text-muted);
         }
-        
+
         .badge {
             background-color: var(--border-color);
             color: var(--secondary-color);
@@ -217,701 +381,1679 @@
             border: 1px solid var(--secondary-color);
             display: inline-block;
             margin-top: 4px;
+            font-style: normal;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 1rem;
             color: var(--text-muted);
             font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            background-color: #0e0e0e;
+        }
+
+        /* GitHub Projects Styles */
+        .section-header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .github-profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 0.35rem 0.85rem;
+            border-radius: 6px;
+            border: 1px solid rgba(77, 208, 225, 0.35);
+            background-color: rgba(77, 208, 225, 0.06);
+            transition: all 0.2s ease;
+        }
+
+        .github-profile-link:hover {
+            background-color: rgba(77, 208, 225, 0.15);
+            border-color: var(--secondary-color);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .github-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .github-card {
+            background-color: #161616;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .github-card.featured-card {
+            grid-column: 1 / -1;
+        }
+
+        .github-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(100, 181, 246, 0.45);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-image-wrapper {
+            position: relative;
+            margin: 1.2rem 0 1.3rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background-color: #ffffff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-image-wrapper:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 6px 24px rgba(77, 208, 225, 0.25);
+        }
+
+        .project-image-wrapper a {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            cursor: zoom-in;
+        }
+
+        .project-img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+            background-color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .project-image-wrapper:hover .project-img {
+            transform: scale(1.01);
+        }
+
+        .image-overlay-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background-color: rgba(18, 18, 18, 0.88);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            color: #f3f4f6;
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            pointer-events: none;
+            transition: all 0.2s ease;
+        }
+
+        .project-image-wrapper:hover .image-overlay-badge {
+            background-color: rgba(0, 0, 0, 0.95);
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .github-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .github-repo-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .repo-icon {
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .repo-name {
+            font-size: 1.12rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            word-break: break-word;
+        }
+
+        .repo-name:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .project-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            background-color: rgba(100, 181, 246, 0.1);
+            color: var(--primary-color);
+            border: 1px solid rgba(100, 181, 246, 0.3);
+            white-space: nowrap;
+        }
+
+        .github-card-desc {
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: #d1d5db;
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .ptag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            background-color: #242424;
+            color: #9ca3af;
+            border: 1px solid #333333;
+        }
+
+        .github-card-footer {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            padding-top: 1.1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .btn-github-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background-color: var(--primary-color);
+            color: #121212;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.45rem 0.9rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-github-action:hover {
+            background-color: #90caf9;
+            transform: scale(1.02);
+            color: #0d1b2a;
+        }
+
+        .btn-github-secondary {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.45rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .btn-github-secondary:hover {
+            color: #ffffff;
+            border-color: #555555;
+            background-color: #222222;
+        }
+
+        .github-card-slot {
+            background: repeating-linear-gradient(-45deg,
+                    #151515,
+                    #151515 10px,
+                    #191919 10px,
+                    #191919 20px);
+            border: 1px dashed #383838;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 220px;
+            padding: 2rem 1.5rem;
+        }
+
+        .github-card-slot:hover {
+            transform: none;
+            border-color: #555555;
+            box-shadow: none;
+        }
+
+        .slot-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.6rem;
+            color: var(--secondary-color);
+        }
+
+        .slot-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #e5e7eb;
+            margin-bottom: 0.4rem;
+        }
+
+        .slot-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            max-width: 280px;
+            margin: 0 auto;
+            line-height: 1.45;
         }
 
         @media (max-width: 768px) {
             header {
-                padding: 3rem 1rem;
+                padding: 2.5rem 1rem;
             }
+
+            header h1 {
+                font-size: 2.1rem;
+            }
+
+            .profile-img {
+                width: 170px;
+                height: 170px;
+            }
+
             .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.8rem;
+                gap: 0.6rem;
             }
+
+            .tabs-container {
+                justify-content: stretch;
+            }
+
+            .tab-btn {
+                flex: 1 1 100%;
+                justify-content: center;
+            }
+
+            main {
+                padding: 1.5rem 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
             .paper-item {
                 flex-direction: column;
             }
+
             .paper-year {
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.4rem;
+            }
+
+            .github-projects-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
 
     <header>
-        <img src="foto.jpg" alt="Julio A. Sotelo Parraguez" class="profile-img">
+        <img src="files/PhotoJS.jpg" alt="Julio A. Sotelo Parraguez" class="profile-img">
         <h1>Julio A. Sotelo Parraguez</h1>
-        <h2>Assistant Professor, Universidad Técnica Federico Santa María & Adjunct Senior Lecturer, Monash University</h2>
-        
+        <h2>Assistant Professor, Universidad Técnica Federico Santa María & Adjunct Senior Lecturer, Monash University
+        </h2>
+
         <div class="contact-info">
-            <a href="mailto:julio.sotelo@usm.cl">✉️ julio.sotelo@usm.cl</a>
-            <a href="https://scholar.google.com/citations?user=TR_CpjYAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a>
-            <a href="https://www.linkedin.com/in/juliosoteloparraguez" target="_blank">🔗 LinkedIn</a>
-            <a href="https://orcid.org/0000-0002-0915-5215" target="_blank">🆔 ORCID</a>
-            <a href="https://informatica.usm.cl/lista-de-profesores/julio-sotelo/" target="_blank"> UTFSM</a>
-            <a href="https://i-health.cl/about-us/researchers" target="_blank"> iHEALTH</a>
+            <!-- Email -->
+            <a href="mailto:julio.sotelo@usm.cl" title="Email Dr. Sotelo">
+                <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                </span>
+                <span>julio.sotelo@usm.cl</span>
+            </a>
+
+            <!-- Google Scholar -->
+            <a href="https://scholar.google.com/citations?user=TR_CpjYAAAAJ&hl=en" target="_blank"
+                title="Google Scholar Profile">
+                <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path
+                            d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.8 3.84v5.76h2.4v-3.84L12 19l9.6-7.68V9.5L12 0z" />
+                    </svg>
+                </span>
+                <span>Google Scholar</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/juliosoteloparraguez" target="_blank" title="LinkedIn Profile">
+                <span class="contact-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                        <path
+                            d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.65 1.65 0 1 0-.02-3.3 1.65 1.65 0 0 0 .02 3.3m1.39 9.74v-8.37H5.07v8.37h2.78z" />
+                    </svg>
+                </span>
+                <span>LinkedIn</span>
+            </a>
+
+            <!-- ORCID -->
+            <a href="https://orcid.org/0000-0002-0915-5215" target="_blank" title="ORCID Profile">
+                <span class="contact-icon">
+                    <svg viewBox="0 0 256 256" width="18" height="18">
+                        <circle cx="128" cy="128" r="128" fill="#A6CE39" />
+                        <path
+                            d="M86.3 186.2H70.9V79.1h15.4v107.1zm-7.7-122.9c-5.4 0-9.8-4.4-9.8-9.8s4.4-9.8 9.8-9.8 9.8 4.4 9.8 9.8-4.4 9.8-9.8 9.8zm39.1 122.9h-15.4V79.1h30.2c27.1 0 45.4 17.6 45.4 44.8 0 27.6-18.9 44.8-45.7 44.8h-14.5v17.5zm0-92.4v57.4h14.5c18.5 0 30.2-11.8 30.2-28.7 0-16.7-11.4-28.7-29.8-28.7h-14.9z"
+                            fill="#FFF" />
+                    </svg>
+                </span>
+                <span>ORCID</span>
+            </a>
+
+            <!-- UTFSM (Universidad Técnica Federico Santa María) -->
+            <a href="https://informatica.usm.cl/lista-de-profesores/julio-sotelo/" target="_blank"
+                title="Universidad Técnica Federico Santa María">
+                <img src="files/Logo_UTFSM.png" alt="UTFSM Logo" class="contact-img-icon utfsm-logo">
+                <span>UTFSM</span>
+            </a>
+
+            <!-- iHEALTH (Millennium Institute) -->
+            <a href="https://i-health.cl/about-us/researchers" target="_blank"
+                title="Millennium Institute for Intelligent Healthcare Engineering">
+                <img src="files/Logo_iHEALTH.png" alt="iHEALTH Logo" class="contact-img-icon ihealth-logo">
+                <span>iHEALTH</span>
+            </a>
         </div>
     </header>
 
+    <!-- Top Navigation Tabs Bar -->
+    <div class="tabs-nav-wrapper">
+        <nav class="tabs-container" aria-label="Sections">
+            <button class="tab-btn active" data-tab="tab-overview" id="btn-overview" role="tab" aria-selected="true"
+                aria-controls="tab-overview">
+                <span>👤</span>
+                <span>Biography & Projects</span>
+                <span class="tab-badge">8 Projects</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-publications" id="btn-publications" role="tab" aria-selected="false"
+                aria-controls="tab-publications">
+                <span>📄</span>
+                <span>Scientific Publications</span>
+                <span class="tab-badge">50 Articles</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-proceedings" id="btn-proceedings" role="tab" aria-selected="false"
+                aria-controls="tab-proceedings">
+                <span>🎤</span>
+                <span>Conference Proceedings</span>
+                <span class="tab-badge">19 Proceedings</span>
+            </button>
+        </nav>
+    </div>
+
     <main>
-        <!-- Biography -->
-        <section id="biography">
-            <h2 class="section-title">Biography</h2>
-            <div class="bio-text">
-                <p>I am Assistant Professor in the Department of Informatics at Universidad Técnica Federico Santa María in Santiago, Chile. I also serve as an Adjunct Senior Lecturer in the Department of Medical Imaging and Radiation Sciences at Monash University, Australia, and as a Principal Investigator at the Millennium Institute for Intelligent Healthcare Engineering (iHEALTH).</p>
-                <p>I possess a multidisciplinary academic background that seamlessly integrates engineering with data science. I began my career at the Universidad de Valparaíso, where I earned my degree in Civil Biomedical Engineering in 2009 and a Master of Engineering Sciences specializing in Biomedical Engineering in 2011.</p>
-                <p>In 2016, I obtained my PhD and a second Master of Engineering Sciences from the Pontificia Universidad Católica de Chile (PUC). Following my doctoral studies, I completed a four-year postdoctoral fellowship (2016–2020) at PUC’s Biomedical Imaging Center (CIB) and the Department of Electrical Engineering. During this tenure, I also served as a researcher at the Millennium Nucleus CardioMR, focusing on the intersection of medical technology and clinical research. To further expand my technical expertise, I earned a Master of Data Science from the Universidad del Desarrollo in 2022.</p>
-                <p>My primary research interests include biomedical image processing, cardiovascular magnetic resonance imaging (MRI), and biomechanics. Over the past 12 years, I have developed several numerical methods for extracting quantitative information from 4D Flow MRI data, with a dedicated focus on accelerating the clinical translation of these developments. I have participated in numerous high-impact projects related to cardiovascular MRI, including 4D Flow MRI, cardiac strain quantification, and cardiovascular mechanics.</p>
-            </div>
-        </section>
+        <!-- TAB 1: Biography & Research Projects -->
+        <div class="tab-pane active" id="tab-overview" role="tabpanel" aria-labelledby="btn-overview">
+            <!-- Biography -->
+            <section id="biography">
+                <h2 class="section-title">Biography</h2>
+                <div class="bio-text">
+                    <p>I am Assistant Professor in the Department of Informatics at Universidad Técnica Federico Santa
+                        María in Santiago, Chile. I also serve as an Adjunct Senior Lecturer in the Department of
+                        Medical Imaging and Radiation Sciences at Monash University, Australia, and as a Principal
+                        Investigator at the Millennium Institute for Intelligent Healthcare Engineering (iHEALTH).</p>
+                    <p>I possess a multidisciplinary academic background that seamlessly integrates engineering with
+                        data science. I began my career at the Universidad de Valparaíso, where I earned my degree in
+                        Civil Biomedical Engineering in 2009 and a Master of Engineering Sciences specializing in
+                        Biomedical Engineering in 2011.</p>
+                    <p>In 2016, I obtained my PhD and a second Master of Engineering Sciences from the Pontificia
+                        Universidad Católica de Chile (PUC). Following my doctoral studies, I completed a four-year
+                        postdoctoral fellowship (2016–2020) at PUC’s Biomedical Imaging Center (CIB) and the Department
+                        of Electrical Engineering. During this tenure, I also served as a researcher at the Millennium
+                        Nucleus CardioMR, focusing on the intersection of medical technology and clinical research. To
+                        further expand my technical expertise, I earned a Master of Data Science from the Universidad
+                        del Desarrollo in 2022.</p>
+                    <p>My primary research interests include biomedical image processing, cardiovascular magnetic
+                        resonance imaging (MRI), and biomechanics. Over the past 12 years, I have developed several
+                        numerical methods for extracting quantitative information from 4D Flow MRI data, with a
+                        dedicated focus on accelerating the clinical translation of these developments. I have
+                        participated in numerous high-impact projects related to cardiovascular MRI, including 4D Flow
+                        MRI, cardiac strain quantification, and cardiovascular mechanics.</p>
+                    <p>Beyond my research, I have cultivated an extensive teaching and academic mentoring track record
+                        across undergraduate, master's, diploma, and doctoral programs at Universidad Técnica Federico
+                        Santa María, Universidad de Valparaíso, and Pontificia Universidad Católica de Chile. Over the
+                        past decade, I have designed and delivered core and specialized courses in Medical Image
+                        Processing and Reconstruction, Magnetic Resonance Imaging, Artificial Intelligence for Medical
+                        Diagnostics, Discrete Mathematics, and Numerical Optimization. In addition, I have supervised
+                        and co-supervised numerous Master's theses and over 35 undergraduate engineering theses across
+                        Informatics, Biomedical, and Mechanical Engineering, fostering the next generation of engineers
+                        and researchers at the interface of computing, data science, and cardiovascular health.</p>
+                </div>
+            </section>
 
-        <!-- Research Projects -->
-        <section id="projects">
-            <h2 class="section-title">Highlighted Research Projects</h2>
-            <ul class="item-list">
-                <li class="item">
-                    <div class="item-title"><span class="item-year">2026-2029</span> Multi-Modal Estimation of Advanced Hemodynamic Parameters in 4D Flow MRI and Echocardiography, using Neural Networks</div>
-                    <div class="item-desc"><strong>Role:</strong> Principal Investigator (PI) | <strong>Fund:</strong> ANID-FONDECYT 1261167 | <strong>Amount:</strong> USD$ 264,824</div>
-                </li>
-                <li class="item">
-                    <div class="item-title"><span class="item-year">2025-2026</span> Validación de modelos de simulación computacional de fluidos y redes neuronales informadas por la física...</div>
-                    <div class="item-desc"><strong>Role:</strong> Principal Investigator (PI) | <strong>Fund:</strong> Proyecto Multidisciplinario Interno UTFSM PI_M_25_03 | <strong>Amount:</strong> USD$ 18,000</div>
-                </li>
-                <li class="item">
-                    <div class="item-title"><span class="item-year">2023-2025</span> Cuantificación automática de densidad mamaria usando Inteligencia Artificial, como herramienta de apoyo en pesquisa de cáncer mamario: mamAI-dens</div>
-                    <div class="item-desc"><strong>Role:</strong> Co-Principal Investigator (Co-PI) | <strong>Fund:</strong> ANID-FONDEF IT23I0040 | <strong>Amount:</strong> USD$ 224,498</div>
-                </li>
-                <li class="item">
-                    <div class="item-title"><span class="item-year">2023-2026</span> Novel mathematical methods towards stable non-invasive estimation in viscoelastic tissues</div>
-                    <div class="item-desc"><strong>Role:</strong> Co-Principal Investigator (Co-PI) | <strong>Fund:</strong> ANID-FONDECYT 1230864 | <strong>Amount:</strong> USD$ 241,543</div>
-                </li>
-                <li class="item">
-                    <div class="item-title"><span class="item-year">2022-2031</span> Millennium Institute for Intelligent Healthcare Engineering – iHEALTH</div>
-                    <div class="item-desc"><strong>Role:</strong> Principal Investigator (PI) | <strong>Fund:</strong> ANID – Millennium Science Initiative Program – ICN2021_004 | <strong>Amount:</strong> USD$ 10,594,005</div>
-                </li>
-                <li class="item">
-                    <div class="item-title"><span class="item-year">2020-2023</span> Deep-Learning-Atlas-Based method to optimize the postprocessing and evaluation of cardiovascular index and biomarkers from magnetic resonance imaging</div>
-                    <div class="item-desc"><strong>Role:</strong> Principal Investigator (PI) | <strong>Fund:</strong> FONDECYT de iniciación 11200481 | <strong>Amount:</strong> USD$ 87,082</div>
-                </li>
-                <li class="item">
-                    <div class="item-title"><span class="item-year">2020-2022</span> Sistema de inteligencia artificial para el apoyo en el diagnóstico y priorización de exámenes mamográficos</div>
-                    <div class="item-desc"><strong>Role:</strong> Co-Principal Investigator (Co-PI) | <strong>Fund:</strong> FONDEF I+D ID20i10332 | <strong>Amount:</strong> USD$ 211,967</div>
-                </li>
-                <li class="item">
-                    <div class="item-title"><span class="item-year">2018-2021</span> Millennium Nucleus in Cardiovascular Magnetic Resonance (CardioMR)</div>
-                    <div class="item-desc"><strong>Role:</strong> Young Researcher | <strong>Fund:</strong> ANID – Millennium Science Initiative Program – NCN17_129 | <strong>Amount:</strong> USD$ 635,761</div>
-                </li>
-            </ul>
-        </section>
+            <!-- Research Projects -->
+            <section id="projects">
+                <h2 class="section-title">Highlighted Research Projects</h2>
+                <ul class="item-list">
+                    <li class="item">
+                        <div class="item-title"><span class="item-year">2026-2029</span> Multi-Modal Estimation of
+                            Advanced Hemodynamic Parameters in 4D Flow MRI and Echocardiography, using Neural Networks
+                        </div>
+                        <div class="item-desc"><strong>Role:</strong> Principal Investigator (PI) |
+                            <strong>Fund:</strong> ANID-FONDECYT 1261167 | <strong>Amount:</strong> USD$ 264,824
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-title"><span class="item-year">2025-2026</span> Validación de modelos de
+                            simulación computacional de fluidos y redes neuronales informadas por la física...</div>
+                        <div class="item-desc"><strong>Role:</strong> Principal Investigator (PI) |
+                            <strong>Fund:</strong> Proyecto Multidisciplinario Interno UTFSM PI_M_25_03 |
+                            <strong>Amount:</strong> USD$ 18,000
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-title"><span class="item-year">2023-2025</span> Cuantificación automática de
+                            densidad mamaria usando Inteligencia Artificial, como herramienta de apoyo en pesquisa de
+                            cáncer mamario: mamAI-dens</div>
+                        <div class="item-desc"><strong>Role:</strong> Co-Principal Investigator (Co-PI) |
+                            <strong>Fund:</strong> ANID-FONDEF IT23I0040 | <strong>Amount:</strong> USD$ 224,498
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-title"><span class="item-year">2023-2026</span> Novel mathematical methods
+                            towards stable non-invasive estimation in viscoelastic tissues</div>
+                        <div class="item-desc"><strong>Role:</strong> Co-Principal Investigator (Co-PI) |
+                            <strong>Fund:</strong> ANID-FONDECYT 1230864 | <strong>Amount:</strong> USD$ 241,543
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-title"><span class="item-year">2022-2031</span> Millennium Institute for
+                            Intelligent Healthcare Engineering – iHEALTH</div>
+                        <div class="item-desc"><strong>Role:</strong> Principal Investigator (PI) |
+                            <strong>Fund:</strong> ANID – Millennium Science Initiative Program – ICN2021_004 |
+                            <strong>Amount:</strong> USD$ 10,594,005
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-title"><span class="item-year">2020-2023</span> Deep-Learning-Atlas-Based
+                            method to optimize the postprocessing and evaluation of cardiovascular index and biomarkers
+                            from magnetic resonance imaging</div>
+                        <div class="item-desc"><strong>Role:</strong> Principal Investigator (PI) |
+                            <strong>Fund:</strong> FONDECYT de iniciación 11200481 | <strong>Amount:</strong> USD$
+                            87,082
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-title"><span class="item-year">2020-2022</span> Sistema de inteligencia
+                            artificial para el apoyo en el diagnóstico y priorización de exámenes mamográficos</div>
+                        <div class="item-desc"><strong>Role:</strong> Co-Principal Investigator (Co-PI) |
+                            <strong>Fund:</strong> FONDEF I+D ID20i10332 | <strong>Amount:</strong> USD$ 211,967
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-title"><span class="item-year">2018-2021</span> Millennium Nucleus in
+                            Cardiovascular Magnetic Resonance (CardioMR)</div>
+                        <div class="item-desc"><strong>Role:</strong> Young Researcher | <strong>Fund:</strong> ANID –
+                            Millennium Science Initiative Program – NCN17_129 | <strong>Amount:</strong> USD$ 635,761
+                        </div>
+                    </li>
+                </ul>
+            </section>
 
-        <!-- Publications -->
-        <section id="publications">
-            <h2 class="section-title">Scientific Publications</h2>
-            
-            <h3 class="subsection-title">Journal Publications (WoS / SCIELO / Scopus / Non-Indexed)</h3>
-            <div class="item-list">
-                <!-- 2026 -->
-                <div class="paper-item">
-                    <div class="paper-year">2026</div>
-                    <div class="paper-content">
-                        <div class="paper-title">AdaPR: Adaptive Plane Reformatting for 4D flow MRI using deep reinforcement learning <span class="badge">WoS - IF: 6.4</span></div>
-                        <div class="paper-authors">Bisbal J, Sotelo J, Valdes MI, Irarrazaval P, Andia ME, García J, Rodriguez-Palomares J, Raimondi F, Tejos C, Uribe S.</div>
-                        <div class="paper-journal">Computer Methods and Programs in Biomedicine. https://doi.org/10.1016/j.cmpb.2026.109546</div>
+            <!-- GitHub & Open-Source Projects -->
+            <section id="github-projects">
+                <div class="section-header-flex">
+                    <h2 class="section-title" style="margin-bottom: 0;">GitHub Projects</h2>
+                    <a href="https://github.com/JulioSoteloParraguez" target="_blank" rel="noopener noreferrer"
+                        class="github-profile-link" title="Visit GitHub Profile">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        <span>GitHub Profile</span>
+                    </a>
+                </div>
+                <p class="section-subtitle">Open-source scientific toolboxes, computational fluid dynamics packages, and
+                    machine learning models for biomedical imaging.</p>
+
+                <div class="github-projects-grid">
+                    <!-- Project 1: 4D-Flow-Matlab-Toolbox (Featured) -->
+                    <div class="github-card featured-card">
+                        <div>
+                            <div class="github-card-header">
+                                <div class="github-repo-title">
+                                    <svg class="repo-icon" viewBox="0 0 24 24" width="22" height="22"
+                                        fill="currentColor">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                    <a href="https://github.com/JulioSoteloParraguez/4D-Flow-Matlab-Toolbox"
+                                        target="_blank" rel="noopener noreferrer"
+                                        class="repo-name">4D-Flow-Matlab-Toolbox</a>
+                                </div>
+                                <span class="project-badge">Featured Open Source</span>
+                            </div>
+
+                            <p class="github-card-desc">
+                                A comprehensive MATLAB toolbox and graphical application for the non-invasive
+                                quantification and visualization of 3D/4D hemodynamic and geometrical parameters from 4D
+                                Flow Cardiovascular Magnetic Resonance (CMR) data using Finite Element Methods (FEM).
+                                Includes interactive modules for segmentation, finite element mesh generation (using
+                                <em>iso2mesh</em>), wall shear stress (WSS), vorticity, helicity, circulation, and
+                                relative pressure difference mapping.
+                            </p>
+
+                            <!-- Methodology & Hemodynamic Pipeline Diagram -->
+                            <div class="project-image-wrapper">
+                                <a href="files/4DFlowToolbox.jpg" target="_blank"
+                                    title="Click to view full-resolution pipeline diagram">
+                                    <img src="files/4DFlowToolbox.jpg"
+                                        alt="4D Flow MATLAB Toolbox Methodology and Hemodynamic Quantification Pipeline"
+                                        class="project-img">
+                                    <div class="image-overlay-badge">
+                                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                                            <path
+                                                d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                                        </svg>
+                                        <span>Click to enlarge diagram</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="ptag">MATLAB</span>
+                                <span class="ptag">4D Flow MRI</span>
+                                <span class="ptag">Finite Elements (FEM)</span>
+                                <span class="ptag">Hemodynamics</span>
+                                <span class="ptag">Wall Shear Stress (WSS)</span>
+                                <span class="ptag">Relative Pressure</span>
+                                <span class="ptag">Biomechanics</span>
+                            </div>
+                        </div>
+
+                        <div class="github-card-footer">
+                            <a href="https://github.com/JulioSoteloParraguez/4D-Flow-Matlab-Toolbox" target="_blank"
+                                rel="noopener noreferrer" class="btn-github-action">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                <span>Explore Repository</span>
+                            </a>
+                            <a href="https://github.com/JulioSoteloParraguez/4D-Flow-Matlab-Toolbox/blob/main/USER-GUIDE-4D-FLOW-APP-GITHUB.pdf"
+                                target="_blank" rel="noopener noreferrer" class="btn-github-secondary">
+                                <span>User Guide (PDF)</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder for Future Repositories -->
+                    <div class="github-card github-card-slot">
+                        <div class="slot-content">
+                            <div class="slot-icon">🚀</div>
+                            <div class="slot-title">Future Open-Source Releases</div>
+                            <p class="slot-desc">Additional code repositories, deep learning models for medical image
+                                reconstruction, and cardiovascular analysis tools will be featured here as they are
+                                published.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="paper-item">
-                    <div class="paper-year">2026</div>
-                    <div class="paper-content">
-                        <div class="paper-title">The Relationship between vortical flow and pressure gradient reversal in Pulmonary Hypertension—A 4D Analysis of cardiovascular magnetic resonance Flow Imaging <span class="badge">WoS - IF: 2.4</span></div>
-                        <div class="paper-authors">Karim, R., Fyrdahl, A., Ramos, J. G., Melin, M., Sundblad, P., Sotelo, J., Wieslander, B., & Marlevi, D.</div>
-                        <div class="paper-journal">Pulmonary Circulation, 16(3). https://doi.org/10.1002/pul2.70350</div>
+            </section>
+        </div>
+
+        <!-- TAB 2: Scientific Publications (Journals) -->
+        <div class="tab-pane" id="tab-publications" role="tabpanel" aria-labelledby="btn-publications">
+            <section id="publications">
+                <h2 class="section-title">Scientific Publications</h2>
+
+                <h3 class="subsection-title">Journal Publications (WoS / SCIELO / Scopus / Non-Indexed)</h3>
+                <div class="item-list">
+                    <!-- 2026 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2026</div>
+                        <div class="paper-content">
+                            <div class="paper-title">AdaPR: Adaptive Plane Reformatting for 4D flow MRI using deep
+                                reinforcement learning <span class="badge">WoS - IF: 6.4</span></div>
+                            <div class="paper-authors">Bisbal J, Sotelo J, Valdes MI, Irarrazaval P, Andia ME, García J,
+                                Rodriguez-Palomares J, Raimondi F, Tejos C, Uribe S.</div>
+                            <div class="paper-journal">Computer Methods and Programs in Biomedicine. <a
+                                    href="https://doi.org/10.1016/j.cmpb.2026.109546" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.cmpb.2026.109546</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2026</div>
+                        <div class="paper-content">
+                            <div class="paper-title">The Relationship between vortical flow and pressure gradient
+                                reversal in Pulmonary Hypertension—A 4D Analysis of cardiovascular magnetic resonance
+                                Flow Imaging <span class="badge">WoS - IF: 2.4</span></div>
+                            <div class="paper-authors">Karim, R., Fyrdahl, A., Ramos, J. G., Melin, M., Sundblad, P.,
+                                Sotelo, J., Wieslander, B., & Marlevi, D.</div>
+                            <div class="paper-journal">Pulmonary Circulation, 16(3). <a
+                                    href="https://doi.org/10.1002/pul2.70350" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1002/pul2.70350</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2026</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Uncertainty-aware automated labeling of intracranial arteries using
+                                deep learning <span class="badge">WoS - IF: 3.9</span></div>
+                            <div class="paper-authors">Bisbal J, Winter P, Jofre S, Ponce A, Ansari SA, Abdalla R, Markl
+                                M, Welin Odeback O, Uribe S, Tejos C, Sotelo J, Schnell S, Marlevi D.</div>
+                            <div class="paper-journal">BMC Med Imaging. 2026 Mar 16. <a
+                                    href="https://doi.org/10.1186/s12880-026-02276-5" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1186/s12880-026-02276-5</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2026</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Wavelet‐Based Denoising Optimization for Endoscopic Gastric
+                                Slow‐Wave Recordings <span class="badge">WoS - IF: 3.3</span></div>
+                            <div class="paper-authors">Tremain, P., Dowrick, J. M., Cheng, L. K., McKeage, J. W.,
+                                Saavedra, C., Sotelo, J., & Angeli‐Gordon, T. R.</div>
+                            <div class="paper-journal">Healthcare Technology Letters, 13(1), e70052. <a
+                                    href="https://doi.org/10.1049/htl2.70052" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1049/htl2.70052</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2026</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Simultaneous quantitative evaluation of both iliac arteries and
+                                veins via accelerated four-dimensional flow in healthy controls and patients with deep
+                                vein thrombosis: a pilot study <span class="badge">WoS - IF: 2.3</span></div>
+                            <div class="paper-authors">Liu, Q., Wang, X., Lu, Q., Song, L., Guan, X., Sotelo, J., Uribe,
+                                S., Zhang, C., Daniel, G., Sun, C., & Yang, Q.</div>
+                            <div class="paper-journal">Quantitative Imaging In Medicine And Surgery, 16(3), 240. <a
+                                    href="https://doi.org/10.21037/qims-2025-1886" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.21037/qims-2025-1886</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2026</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Evaluating the impact of blood rheology in hemodynamic parameters
+                                by 4D Flow MRI in large vessels considering the hematocrit effect <span
+                                    class="badge">WoS - IF: 4.9</span></div>
+                            <div class="paper-authors">Mella, H., Galarce, F., Sekine, T., Sotelo, J., & Castillo, E.
+                            </div>
+                            <div class="paper-journal">Biomedical Signal Processing And Control, 111, 108145. <a
+                                    href="https://doi.org/10.1016/j.bspc.2025.108145" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.bspc.2025.108145</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2026</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Evaluación automatizada de úlceras del pie diabético: Estimación de
+                                categorías PWAT mediante características radiómicas y aprendizaje automático <span
+                                    class="badge">SCIELO / Scopus</span></div>
+                            <div class="paper-authors">Márquez-Sandoval, M., Carvajal, B. M., Parraguez, J. S., &
+                                Aguilera, A.</div>
+                            <div class="paper-journal">Ingeniare. Revista Chilena De Ingeniería, 33. <a
+                                    href="https://doi.org/10.64966/ingeniare.v33.24" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.64966/ingeniare.v33.24</a></div>
+                        </div>
+                    </div>
+                    <!-- 2025 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <div class="paper-title">AI Applied to Cardiac Magnetic Resonance for Precision Medicine in
+                                Coronary Artery Disease: A Systematic Review <span class="badge">WoS - IF: 2.3</span>
+                            </div>
+                            <div class="paper-authors">Jiménez-Jara, C., Salas, R., Díaz-Navarro, R., Chabert, S.,
+                                Andia, M. E., Vega, J., Urbina, J., Uribe, S., Sekine, T., Raimondi, F., & Sotelo, J.
+                            </div>
+                            <div class="paper-journal">Journal of Cardiovascular Development and Disease, 12(9), 345. <a
+                                    href="https://doi.org/10.3390/jcdd12090345" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.3390/jcdd12090345</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Physics-Informed Neural Network for Modeling the Pulmonary Artery
+                                Blood Pressure from Magnetic Resonance Images: A Reduced-Order Navier–Stokes Model <span
+                                    class="badge">WoS - IF: 3.9</span></div>
+                            <div class="paper-authors">Jara, S., Sotelo, J., Ortiz-Puerta, D., Estévez, P. A., Uribe,
+                                S., Chabert, S., & Salas, R.</div>
+                            <div class="paper-journal">Biomedicines, 13(9), 2058. <a
+                                    href="https://doi.org/10.3390/biomedicines13092058" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.3390/biomedicines13092058</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Identifying Clinically Relevant Findings in Breast Cancer using
+                                Deep Learning and Feature Attribution on Local Views from High-Resolution Mammography
+                                <span class="badge">WoS - IF: 3.3</span>
+                            </div>
+                            <div class="paper-authors">Mellado, D., Mayeta, L., Sotelo, J., Querales, M., Godoy, E.,
+                                Lever, S., Pardo, F., Chabert, S., Salas, R.</div>
+                            <div class="paper-journal">Frontiers in Oncology. Volume 15 - 2025. <a
+                                    href="https://doi.org/10.3389/fonc.2025.1601929" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.3389/fonc.2025.1601929</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Simultaneous acquisition of water, fat, and velocity images using a
+                                Phase‐Contrast T2*‐IDEAL method <span class="badge">WoS - IF: 2.7</span></div>
+                            <div class="paper-authors">Denecken, E., Arrieta, C., Sotelo, J., Mella, H., & Uribe, S.
+                            </div>
+                            <div class="paper-journal">NMR in Biomedicine, 38(6). <a
+                                    href="https://doi.org/10.1002/nbm.70049" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1002/nbm.70049</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Radiomics-Driven Neuro-Fuzzy Framework for Rule Generation to
+                                Enhance Explainability in MRI-Based Brain Tumor Segmentation <span class="badge">WoS -
+                                    IF: 2.5</span></div>
+                            <div class="paper-authors">Mayeta L, Cavieres E, Salinas M, Mellado D, Ponce S, Torres F,
+                                Chabert S, Querales M, Sotelo J, Salas R.</div>
+                            <div class="paper-journal">Frontiers in Neuroinformatics Volume 19. <a
+                                    href="https://doi.org/10.3389/fninf.2025.1550432" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.3389/fninf.2025.1550432</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Simultaneous acquisition of water, fat and velocity images using a
+                                phase-contrast 3p-Dixon method <span class="badge">WoS - IF: 2.1</span></div>
+                            <div class="paper-authors">Denecken E, Arrieta C, Hernando D, Sotelo J, Mella H, Uribe S.
+                            </div>
+                            <div class="paper-journal">Magnetic Resonance Imaging, 118:110341 (2025). <a
+                                    href="https://doi.org/10.1016/j.mri.2025.110341" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.mri.2025.110341</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Characterising growth and early haemodynamic inefficiencies:
+                                Phase-Contrast MRI analysis of the aorta in post-Fontan Hypoplastic left heart syndrome
+                                <span class="badge">Non-Indexed</span>
+                            </div>
+                            <div class="paper-authors">Fernandes, J. F., Bellsham-Revell, H., Sattwika, P. D.,
+                                Ghahfarokhi, M., Yap, H. Y., Kiely, A., Ferrez, X. M., Camara, O., Sotelo, J., Wong, J.,
+                                Barron, D., Salih, C., Pushparajah, K., Lewandowski, A. J., Lamata, P., & De Vecchi, A.
+                            </div>
+                            <div class="paper-journal">JTCVS Structural and Endovascular, 100086. <a
+                                    href="https://doi.org/10.1016/j.xjse.2025.100086" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.xjse.2025.100086</a></div>
+                        </div>
+                    </div>
+                    <!-- 2024 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2024</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Impact of 4D- Flow CMR parameters on functional evaluation of
+                                Fontan circulation <span class="badge">WoS - IF: 1.838</span></div>
+                            <div class="paper-authors">Ait Ali L, Martini N, Listo E, Valenti E, Sotelo J, Salvadori S,
+                                Passino C, Monteleone A, Stagnaro N, Trocchio G, Marrone C, Raimondi F, Catapano G,
+                                Festa P.</div>
+                            <div class="paper-journal">Pediatr Cardiol (2024). <a
+                                    href="https://doi.org/10.1007/s00246-024-03446-4" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1007/s00246-024-03446-4</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2024</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Biomedical engineering research in Chilean universities - A
+                                bibliometric analysis <span class="badge">WoS - IF: 0.78</span></div>
+                            <div class="paper-authors">Vásquez-Salgado, J., L. Figueroa, R., Sotelo, J., &
+                                Villalobos-Cid, M.</div>
+                            <div class="paper-journal">IEEE Latin America Transactions, 22(4), 339–351. <a
+                                    href="https://doi.org/10.1109/TLA.2024.10472960" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1109/TLA.2024.10472960</a></div>
+                        </div>
+                    </div>
+                    <!-- 2023 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2023</div>
+                        <div class="paper-content">
+                            <div class="paper-title">4D Flow cardiovascular magnetic resonance consensus statement: 2023
+                                update <span class="badge">WoS - IF: 6.903</span></div>
+                            <div class="paper-authors">Bissell, M.M., Raimondi, F., Ait Ali, L. et al.</div>
+                            <div class="paper-journal">J Cardiovasc Magn Reson 25, 40 (2023). <a
+                                    href="https://doi.org/10.1186/s12968-023-00942-z" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1186/s12968-023-00942-z</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2023</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Aortic Stenosis: Haemodynamic Benchmark and Metric Reliability
+                                Study <span class="badge">WoS - IF: 3.216</span></div>
+                            <div class="paper-authors">Gill H, Fernandes JF, Nio A, Dockerill C, Shah N, Ahmed N,
+                                Raymond J, Wang S, Sotelo J, Urbina J, Uribe S, Rajani R, Rhode K, Lamata P.</div>
+                            <div class="paper-journal">J. of Cardiovasc. Trans. Res. (2023). <a
+                                    href="https://doi.org/10.1007/s12265-022-10350-w" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1007/s12265-022-10350-w</a></div>
+                        </div>
+                    </div>
+                    <!-- 2022 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Mechanics-informed snakes isogeometric analysis (MISIGA): an
+                                image-based method for the estimation of local deformation and strain in blood vessels
+                                <span class="badge">WoS - IF: 7.963</span>
+                            </div>
+                            <div class="paper-authors">Cox A, Ortiz-Puerta D, Sotelo J, Uribe S, Hurtado DE.</div>
+                            <div class="paper-journal">Engineering with Computers 38, 4043–4060 (2022). <a
+                                    href="https://doi.org/10.1007/s00366-022-01738-y" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1007/s00366-022-01738-y</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Impact of Respiratory Gating on Hemodynamic Parameters from 4D Flow
+                                MRI <span class="badge">WoS - IF: 2.679</span></div>
+                            <div class="paper-authors">Denecken E, Sotelo J, Arrieta C, Andia ME, Uribe S.</div>
+                            <div class="paper-journal">Applied Sciences. 2022, 12, 2943. <a
+                                    href="https://doi.org/10.3390/app12062943" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.3390/app12062943</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Identification of hemodynamic biomarkers for bicuspid aortic valve
+                                induced aortic dilation using machine learning <span class="badge">WoS - IF:
+                                    6.698</span></div>
+                            <div class="paper-authors">Franco P, Sotelo J, Guala A, Dux-Santoy L, Evangelista A,
+                                Rodríguez-Palomares J, Mery D, Salas R, Uribe S.</div>
+                            <div class="paper-journal">Computers in Biology and Medicine. 2022 Feb; 141:105147. <a
+                                    href="https://doi.org/10.1016/j.compbiomed.2021.105147" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.compbiomed.2021.105147</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Altered Aortic Hemodynamics and Relative Pressure in Patients with
+                                Dilated Cardiomyopathy <span class="badge">WoS - IF: 3.554</span></div>
+                            <div class="paper-authors">David Marlevi, Jorge Mariscal-Harana, Nicholas S Burris, Julio
+                                Sotelo, Bram Ruijsink, Myrianthi Hadjicharalambous, Liya Asner, Eva Sammut, Radomir
+                                Chabiniok, Sergio Uribe, Reidar Winter, Pablo Lamata, Jordi Alastruey, David
+                                Nordsletten.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Translational Research. 2022
+                                Aug;15(4):692-707. <a href="https://doi.org/10.1007/s12265-021-10181-1" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1007/s12265-021-10181-1</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Fully Three-Dimensional Hemodynamic Characterization of Altered
+                                Blood Flow in Bicuspid Aortic Valve Patients With Respect to Aortic Dilatation: A Finite
+                                Element Approach <span class="badge">WoS - IF: 6.05</span></div>
+                            <div class="paper-authors">Sotelo J, Franco P, Guala A, Dux-Santoy L, Ruiz-Muñoz A,
+                                Evangelista A, Mella H, Mura J, Hurtado DE, Rodríguez-Palomares JF, Uribe S.</div>
+                            <div class="paper-journal">Frontiers in Cardiovascular Medicine. 2022 May 18;9:885338. <a
+                                    href="https://doi.org/10.3389/fcvm.2022.885338" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.3389/fcvm.2022.885338</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Tissue engineered in-vitro vascular patch fabrication using hybrid
+                                3D printing and electrospinning <span class="badge">WoS - IF: 10.761</span></div>
+                            <div class="paper-authors">Mayoral I, Bevilacqua E, Gómez G, Hmadcha A, González-Loscertales
+                                I, Reina E, Sotelo J, Domínguez A, Pérez-Alcántara P, Smani Y, González-Puertas P,
+                                Mendez A, Uribe S, Smani T, Ordoñez A, Valverde I.</div>
+                            <div class="paper-journal">Materials Today Bio. 2022 Apr 14;14:100252. <a
+                                    href="https://doi.org/10.1016/j.mtbio.2022.100252" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.mtbio.2022.100252</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Assessment of 4D flow MRI's quality by verifying its Navier-Stokes
+                                compatibility <span class="badge">WoS - IF: 2.648</span></div>
+                            <div class="paper-authors">Garay J, Mella H, Sotelo J, Cárcamo C, Uribe S, Bertoglio C, Mura
+                                J.</div>
+                            <div class="paper-journal">International Journal for Numerical Methods in Biomedical
+                                Engineering. 2022 Jun;38(6):e3603. <a href="https://doi.org/10.1002/cnm.3603"
+                                    target="_blank" rel="noopener noreferrer">https://doi.org/10.1002/cnm.3603</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Non-invasive local pulse wave velocity using 4D-flow MRI <span
+                                    class="badge">WoS - IF: 3.88</span></div>
+                            <div class="paper-authors">Joaquín Mura, Julio Sotelo, Hernán Mella, James Wong, Tarique
+                                Hussain, Bram Ruijsink, Sergio Uribe.</div>
+                            <div class="paper-journal">Biomedical Signal Processing and Control. 2022 Jan; 71(B):103259.
+                                <a href="https://doi.org/10.1016/j.bspc.2021.103259" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.bspc.2021.103259</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Three-dimensional quantification of circulation using finite
+                                element methods in 4D Flow MR Data of the Thoracis Aorta <span class="badge">WoS - IF:
+                                    4.668</span></div>
+                            <div class="paper-authors">Julio Sotelo, Malenka M Bissell, Yaxin Jiang, Hernan Mella,
+                                Joaquín Mura, Sergio Uribe.</div>
+                            <div class="paper-journal">Magnetic Resonance in Medicine. 2022 Feb;87(2):1036-1045. <a
+                                    href="https://doi.org/10.1002/mrm.29004" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1002/mrm.29004</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Impact of aortic arch curvature in flow hemodynamics in patients
+                                with transposition of the great arteries after arterial switch operation <span
+                                    class="badge">WoS - IF: 9.13</span></div>
+                            <div class="paper-authors">Julio Sotelo, Israel Valverde, Duarte Martins, Damien Bonnet,
+                                Nathalie Boddaert, Kuberan Pushparajan, Sergio Uribe, Francesca Raimondi.</div>
+                            <div class="paper-journal">European Heart Journal - Cardiovascular Imaging. 2022 Feb
+                                22;23(3):402-411. <a href="https://doi.org/10.1093/ehjci/jeaa416" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1093/ehjci/jeaa416</a></div>
+                        </div>
+                    </div>
+                    <!-- 2021 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2021</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Comprehensive Assessment of Left Intraventricular Hemodynamics
+                                Using a Finite Element Method: An Application to Dilated Cardiomyopathy Patients <span
+                                    class="badge">WoS - IF: 2.679</span></div>
+                            <div class="paper-authors">Franco P, Sotelo J, Montalba C, Ruijsink B, Kerfoot E,
+                                Nordsletten D, Mura J, Hurtado D, Uribe S.</div>
+                            <div class="paper-journal">Applied Sciences. 2021; 11(23):11165. <a
+                                    href="https://doi.org/10.3390/app112311165" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.3390/app112311165</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2021</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Validation of 4D Flow based relative pressure maps in aortic flows
+                                <span class="badge">WoS - IF: 13.83</span>
+                            </div>
+                            <div class="paper-authors">David Nolte, Jesus Urbina, Julio Sotelo, Leo Soka, Cristian
+                                Montalba, Israel Valverde, Axel Osses, Sergio Uribe, Cristobal Bertoglio.</div>
+                            <div class="paper-journal">Medical Image Analysis. 2021 Dec;74:102195. <a
+                                    href="https://doi.org/10.1016/j.media.2021.102195" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.media.2021.102195</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2021</div>
+                        <div class="paper-content">
+                            <div class="paper-title">A comprehensive comparison between shortest-path HARP refinement,
+                                SinMod, and DENSEanalysis processing tools applied to CSPAMM and DENSE images <span
+                                    class="badge">WoS - IF: 2.546</span></div>
+                            <div class="paper-authors">Hernán Mella, Joaquín Mura, Julio Sotelo, Sergio Uribe.</div>
+                            <div class="paper-journal">Magnetic Resonance Imaging, 2021 Nov;83:14-26. <a
+                                    href="https://doi.org/10.1016/j.mri.2021.07.001" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.mri.2021.07.001</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2021</div>
+                        <div class="paper-content">
+                            <div class="paper-title">False lumen pressure estimation in type B aortic dissection using
+                                4D flow cardiovascular magnetic resonance: comparisons with aortic growth <span
+                                    class="badge">WoS - IF: 6.903</span></div>
+                            <div class="paper-authors">David Marlevi, Julio Sotelo, Ross Grogan-Kaylor; Yunus Ahmed,
+                                Sergio Uribe, Himanshu J. Patel, Elazer R. Edelman, David A. Nordsletten, Nicholas S.
+                                Burris.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance 23, 51 (2021). <a
+                                    href="https://doi.org/10.1186/s12968-021-00741-4" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1186/s12968-021-00741-4</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2021</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Abnormal vortex formation in the right pulmonary artery after the
+                                arterial switch operation <span class="badge">WoS - IF: 0.78</span></div>
+                            <div class="paper-authors">Evangeline Warmerdam, Hans C. van Assen, Julio Sotelo, Heynric B.
+                                Grotenhuis.</div>
+                            <div class="paper-journal">European Heart Journal - Case Reports. 2021 Jan 15;5(1):ytaa549.
+                                <a href="https://doi.org/10.1093/ehjcr/ytaa549" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1093/ehjcr/ytaa549</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2021</div>
+                        <div class="paper-content">
+                            <div class="paper-title">HARP-I: A Harmonic Phase Interpolation Method for the Estimation of
+                                Motion from Tagged MR Images <span class="badge">WoS - IF: 10.05</span></div>
+                            <div class="paper-authors">Hernán Mella, Joaquín Mura, Hui Wang, Michael D. Taylor, Radomir
+                                Chabiniok, Jaroslav Tintera, Julio Sotelo, Sergio Uribe.</div>
+                            <div class="paper-journal">IEEE transactions on medical imaging. 2021 Apr;40(4):1240-1252.
+                                <a href="https://doi.org/10.1109/TMI.2021.3051092" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1109/TMI.2021.3051092</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2020 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2020</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Response by Dux-Santoy et al to Letter Regarding Article, “Low and
+                                Oscillatory Wall Shear Stress Is Not Related to Aortic Dilation in Patients With
+                                Bicuspid Aortic Valve: A Time-Resolved 3-Dimensional Phase-Contrast Magnetic Resonance
+                                Imaging Study” <span class="badge">WoS - IF: 10.51</span></div>
+                            <div class="paper-authors">Dux-Santoy L, Guala A, Sotelo J, Uribe S, Teixidó-Turà G,
+                                Evangelista A, Rodríguez-Palomares JF.</div>
+                            <div class="paper-journal">Arteriosclerosis, Thrombosis, and Vascular Biology. 2020
+                                Apr;40(4):e116-e117. <a href="https://doi.org/10.1161/ATVBAHA.120.314057"
+                                    target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1161/ATVBAHA.120.314057</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2020</div>
+                        <div class="paper-content">
+                            <div class="paper-title">False lumen ejection fraction predicts growth in type B aortic
+                                dissection: preliminary results <span class="badge">WoS - IF: 4.191</span></div>
+                            <div class="paper-authors">Burris NS, Nordsletten DA, Sotelo JA, Grogan-Kaylor R, Houben IB,
+                                Figueroa CA, Uribe S, Patel HJ.</div>
+                            <div class="paper-journal">European Journal of Cardio-Thoracic Surgery, 2020 May
+                                1;57(5):896-903. <a href="https://doi.org/10.1093/ejcts/ezz343" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1093/ejcts/ezz343</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2020</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Low and Oscillatory Wall Shear Stress Is Not Related to Aortic
+                                Dilation in Patients With Bicuspid Aortic Valve: A Time-Resolved 3-Dimensional
+                                Phase-Contrast Magnetic Resonance Imaging Study <span class="badge">WoS - IF:
+                                    10.51</span></div>
+                            <div class="paper-authors">Dux-Santoy L, Guala A, Sotelo J, Uribe S, Teixidó-Turà G,
+                                Ruiz-Muñoz A, Hurtado DE, Valente F, Galian-Gay L, Gutiérrez L, González-Alujas T,
+                                Johnson KM, Wieben O, Ferreira I, Evangelista A, Rodríguez-Palomares JF.</div>
+                            <div class="paper-journal">Arteriosclerosis, Thrombosis, and Vascular Biology. 2020
+                                Jan;40(1):e10-e20. <a href="https://doi.org/10.1161/ATVBAHA.119.313636" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1161/ATVBAHA.119.313636</a></div>
+                        </div>
+                    </div>
+                    <!-- 2018 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2018</div>
+                        <div class="paper-content">
+                            <div class="paper-title">3D axial and circumferential wall shear stress from 4D flow MRI
+                                data using a finite element method and a laplacian approach <span class="badge">WoS -
+                                    IF: 4.668</span></div>
+                            <div class="paper-authors">Sotelo J, Dux-Santoy L, Guala A, Rodríguez-Palomares J,
+                                Evangelista A, Sing-Long C, Urbina J, Mura J, Hurtado DE, Uribe S.</div>
+                            <div class="paper-journal">Magnetic Resonance in Medicine. 2018 May;79(5):2816-2823. <a
+                                    href="https://doi.org/10.1002/mrm.26927" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1002/mrm.26927</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2018</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Variability of 4D flow parameters when subjected to changes in MRI
+                                acquisitions parameters using a realistic thoracic aortic phantom <span
+                                    class="badge">WoS - IF: 4.668</span></div>
+                            <div class="paper-authors">Montalba C, Urbina J, Sotelo J, Andia ME, Tejos C, Irarrazaval P,
+                                Hurtado DE, Valverde I, Uribe S.</div>
+                            <div class="paper-journal">Magnetic Resonance in Medicine. 2018 Apr;79(4):1882-1892. <a
+                                    href="https://doi.org/10.1002/mrm.26834" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1002/mrm.26834</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2018</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Three-dimensional quantification of Vorticity and Helicity from 3D
+                                cine PC- MRI using finite element interpolations <span class="badge">WoS - IF:
+                                    4.67</span></div>
+                            <div class="paper-authors">Sotelo J, Urbina J, Valverde I, Mura J, Tejos C, Irarrazaval P,
+                                Andia ME, Hurtado DE, Uribe S.</div>
+                            <div class="paper-journal">Magnetic Resonance in Medicine. 2018 Jan;79(1):541-553. <a
+                                    href="https://doi.org/10.1002/mrm.26687" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1002/mrm.26687</a></div>
+                        </div>
+                    </div>
+                    <!-- 2017 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2017</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Quantification of pulmonary regurgitation in patients with repaired
+                                Tetralogy of Fallot by 2D phase-contrast MRI: Differences between the standard method of
+                                velocity averaging and a pixel-wise analysis <span class="badge">WoS - IF: 1.5</span>
+                            </div>
+                            <div class="paper-authors">Sotelo J, Bächler P, Urbina J, Crelier G, Toro L, Ferreiro M,
+                                Valverde I, Andia M, Tejos C, Irarrazaval P, Uribe S.</div>
+                            <div class="paper-journal">JRSM Cardiovasc Diseases. 2017 Jan-Dec; 6: 2048004017731986. <a
+                                    href="https://doi.org/10.1177/2048004017731986" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1177/2048004017731986</a></div>
+                        </div>
+                    </div>
+                    <!-- 2016 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2016</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Enhancing the Velocity data from 4D flow MR Images by Reducing its
+                                Divergence <span class="badge">WoS - IF: 10.05</span></div>
+                            <div class="paper-authors">Mura J, Pino AM, Sotelo J, Valverde I, Tejos C, Andia ME,
+                                Irarrazaval P, Uribe S.</div>
+                            <div class="paper-journal">IEEE transactions on medical imaging. 2016 Oct;35(10):2353-2364.
+                                <a href="https://doi.org/10.1109/TMI.2016.2570010" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1109/TMI.2016.2570010</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2016</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Realistic aortic phantom to study hemodynamics using MRI and
+                                cardiac catheterization in normal and aortic coarctation conditions <span
+                                    class="badge">WoS - IF: 4.813</span></div>
+                            <div class="paper-authors">Urbina J, Sotelo JA, Springmüller D, Montalba C, Letelier K,
+                                Tejos C, Irarrázaval P, Andia ME, Razavi R, Valverde I, Uribe SA.</div>
+                            <div class="paper-journal">Journal of Magnetic Resonance Imaging. 2016 Sep;44(3):683-97. <a
+                                    href="https://doi.org/10.1002/jmri.25208" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1002/jmri.25208</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2016</div>
+                        <div class="paper-content">
+                            <div class="paper-title">3D quantification of wall shear stress and oscillatory shear index
+                                using a finite-element method in 3D CINE PC-MRI data of the thoracic aorta <span
+                                    class="badge">WoS - IF: 10.05</span></div>
+                            <div class="paper-authors">Sotelo J, Urbina J, Valverde I, Tejos C, Irarrazaval P, Andia ME,
+                                Uribe S, Hurtado DE.</div>
+                            <div class="paper-journal">IEEE transactions on medical imaging. 2016 Jun;35(6):1475-87. <a
+                                    href="https://doi.org/10.1109/TMI.2016.2517406" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1109/TMI.2016.2517406</a></div>
+                        </div>
+                    </div>
+                    <!-- 2015 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2015</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Intrahepatic portal vein blood volume estimated by non-contrast
+                                Magnetic Resonance Imaging for the assessment of portal hypertension <span
+                                    class="badge">WoS - IF: 2.546</span></div>
+                            <div class="paper-authors">Aguirre-Reyes DF, Sotelo JA, Arab JP, Arrese M, Tejos R,
+                                Irarrazaval P, Tejos C, Uribe SA, Andia ME.</div>
+                            <div class="paper-journal">Magnetic Resonance Imaging. 2015 Oct;33(8):970-7. <a
+                                    href="https://doi.org/10.1016/j.mri.2015.06.016" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.mri.2015.06.016</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2015</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Quantification of wall shear stress using a finite-element method
+                                in multidimensional phase contrast MR data of the thoracic aorta <span class="badge">WoS
+                                    - IF: 1.606</span></div>
+                            <div class="paper-authors">Sotelo J, Urbina J, Valverde I, Tejos C, Irarrázaval P, Hurtado
+                                DE, Uribe S.</div>
+                            <div class="paper-journal">Journal of Biomechanics. 2015 Jul 16;48(10):1817-27. <a
+                                    href="https://doi.org/10.1016/j.jbiomech.2015.04.038" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.jbiomech.2015.04.038</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2015</div>
+                        <div class="paper-content">
+                            <div class="paper-title">3D printed models for planning endovascular stenting in transverse
+                                aortic arch hypoplasia: 3D Cardiovascular Model Simulation <span class="badge">WoS - IF:
+                                    2.585</span></div>
+                            <div class="paper-authors">Valverde I, Gomez G, Coserria JF, Suarez-Mejias C, Uribe S,
+                                Sotelo J, Velasco MN, Santos De Soto J, Hosseinpour AR, Gomez-Cia T.</div>
+                            <div class="paper-journal">Catheterization and Cardiovascular Interventions. 2015
+                                May;85(6):1006-12. <a href="https://doi.org/10.1002/ccd.25810" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1002/ccd.25810</a></div>
+                        </div>
+                    </div>
+                    <!-- 2013 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2013</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Assessment of normal flow patterns in the pulmonary circulation by
+                                using 4D magnetic resonance velocity mapping <span class="badge">WoS - IF: 2.546</span>
+                            </div>
+                            <div class="paper-authors">Bächler P, Pinochet N, Sotelo J, Crelier G, Irarrazaval P, Tejos
+                                C, Uribe S.</div>
+                            <div class="paper-journal">Magnetic Resonance Imaging. 2013 Feb;31(2):178-88. <a
+                                    href="https://doi.org/10.1016/j.mri.2012.06.036" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.mri.2012.06.036</a></div>
+                        </div>
+                    </div>
+                    <!-- 2012 -->
+                    <div class="paper-item">
+                        <div class="paper-year">2012</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Medición de presiones relativas en aorta torácica y arteria
+                                pulmonar de voluntarios sanos y pacientes con Tetralogía de Fallot reparada utilizando
+                                la secuencia de 4D Flow de resonancia magnética cardiaca <span
+                                    class="badge">SCIELO</span></div>
+                            <div class="paper-authors">Jesús Urbina, Julio Sotelo, Cristián Tejos, Daniel Hurtado,
+                                Marcelo Andía, Pablo Irarrázaval, Sergio Uribe.</div>
+                            <div class="paper-journal">Revista Chilena de Radiología 2012;18(4):157-162. <a
+                                    href="https://doi.org/10.4067/S0717-93082012000400003" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.4067/S0717-93082012000400003</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2012</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Análisis cuantitativo de variables hemodinámicas de la aorta
+                                obtenidas de 4D Flow <span class="badge">SCIELO</span></div>
+                            <div class="paper-authors">Julio Sotelo, Rodrigo Salas, Cristián Tejos, Sterén Chabert,
+                                Sergio Uribe.</div>
+                            <div class="paper-journal">Revista Chilena de Radiología 2012;18(2):62-67. <a
+                                    href="https://doi.org/10.4067/S0717-93082012000200005" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.4067/S0717-93082012000200005</a></div>
+                        </div>
                     </div>
                 </div>
-                <div class="paper-item">
-                    <div class="paper-year">2026</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Uncertainty-aware automated labeling of intracranial arteries using deep learning <span class="badge">WoS - IF: 3.9</span></div>
-                        <div class="paper-authors">Bisbal J, Winter P, Jofre S, Ponce A, Ansari SA, Abdalla R, Markl M, Welin Odeback O, Uribe S, Tejos C, Sotelo J, Schnell S, Marlevi D.</div>
-                        <div class="paper-journal">BMC Med Imaging. doi: https://doi.org/10.1186/s12880-026-02276-5</div>
+            </section>
+        </div>
+
+        <!-- TAB 3: Conference Proceedings & Presentations -->
+        <div class="tab-pane" id="tab-proceedings" role="tabpanel" aria-labelledby="btn-proceedings">
+            <section id="proceedings">
+                <h2 class="section-title">Conference Proceedings</h2>
+
+                <h3 class="subsection-title">Conference Proceedings (WoS / Scopus)</h3>
+                <div class="item-list">
+                    <!-- 2026 Proc -->
+                    <div class="paper-item">
+                        <div class="paper-year">2026</div>
+                        <div class="paper-content">
+                            <div class="paper-title">4D Flow MRI MATLAB Toolbox <span class="badge">WoS</span></div>
+                            <div class="paper-authors">Sotelo, J., Uribe, S., Hurtado, D., Mura, J., Mella, H., Marlevi,
+                                D., Lamata, P., & Fernandes, J.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 29th Annual SCMR
+                                Scientific Sessions, Rio de Janeiro, Brasil, 28, 102339. <a
+                                    href="https://doi.org/10.1016/j.jocmr.2025.102339" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.jocmr.2025.102339</a></div>
+                        </div>
                     </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2026</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Wavelet-Based Denoising Optimization for Endoscopic Gastric Slow-Wave Recordings <span class="badge">WoS - IF: 3.3</span></div>
-                        <div class="paper-authors">Tremain, P., Dowrick, J. M., Cheng, L. K., McKeage, J. W., Saavedra, C., Sotelo, J., & Angeli-Gordon, T. R.</div>
-                        <div class="paper-journal">Healthcare Technology Letters, 13(1), e70052. https://doi.org/10.1049/htl2.70052</div>
+                    <div class="paper-item">
+                        <div class="paper-year">2026</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Prediction of peak-to-peak pressure gradient in patients with
+                                aortic coarctation using Physics-Informed Neural Networks from Magnetic Resonance Images
+                                <span class="badge">WoS</span>
+                            </div>
+                            <div class="paper-authors">Jara, S., Galarce, F., Mella, H., Ñanculef, R., Salas, R.,
+                                Beerbaum, P., Grotenhuis, H., Marlevi, D., Valverde, I., Uribe, S., & Sotelo, J.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 29th Annual SCMR
+                                Scientific Sessions, Rio de Janeiro, Brasil, 28, 102500. <a
+                                    href="https://doi.org/10.1016/j.jocmr.2025.102500" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.jocmr.2025.102500</a></div>
+                        </div>
                     </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2026</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Simultaneous quantitative evaluation of both iliac arteries and veins via accelerated four-dimensional flow in healthy controls and patients with deep vein thrombosis: a pilot study <span class="badge">WoS - IF: 2.3</span></div>
-                        <div class="paper-authors">Liu, Q., Wang, X., Lu, Q., Song, L., Guan, X., Sotelo, J., Uribe, S., Zhang, C., Daniel, G., Sun, C., & Yang, Q.</div>
-                        <div class="paper-journal">Quantitative Imaging In Medicine And Surgery, 16(3), 240.</div>
+                    <div class="paper-item">
+                        <div class="paper-year">2026</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Effect of blood rheology and hematocrit on the estimation of
+                                hemodynamic parameters in hypertrophic cardiomyopathy <span class="badge">WoS</span>
+                            </div>
+                            <div class="paper-authors">Sotelo, J., Mella, H., Galarce, F., Velasquez, C., Uribe, S.,
+                                Sekine, T., & Castillo, E.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 29th Annual SCMR
+                                Scientific Sessions, Rio de Janeiro, Brasil, 28, 102641. <a
+                                    href="https://doi.org/10.1016/j.jocmr.2025.102641" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.jocmr.2025.102641</a></div>
+                        </div>
                     </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2026</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Evaluating the impact of blood rheology in hemodynamic parameters by 4D Flow MRI in large vessels considering the hematocrit effect <span class="badge">WoS - IF: 4.9</span></div>
-                        <div class="paper-authors">Mella, H., Galarce, F., Sekine, T., Sotelo, J., & Castillo, E.</div>
-                        <div class="paper-journal">Biomedical Signal Processing And Control, 111, 108145.</div>
+
+                    <!-- 2025 Proc -->
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Non-invasively measured pressure drops are higher in neonates with
+                                coarctation of the aorta (CoA) compared to reference controls <span
+                                    class="badge">WoS</span></div>
+                            <div class="paper-authors">Abuzinadah, R. F., Sotelo, J., Broadbent, D., Cash, M. L.,
+                                Shelley, D., Jin, N., Plein, S., Marlevi, D., & Bissell, M. M.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 28th Annual SCMR
+                                Scientific Sessions, Washington DC, USA, 27, 101163. <a
+                                    href="https://doi.org/10.1016/j.jocmr.2024.101163" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.jocmr.2024.101163</a></div>
+                        </div>
                     </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2026</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Evaluación automatizada de úlceras del pie diabético: Estimación de categorías PWAT mediante características radiómicas y aprendizaje automático <span class="badge">SCIELO / Scopus</span></div>
-                        <div class="paper-authors">Márquez-Sandoval, M., Carvajal, B. M., Parraguez, J. S., & Aguilera, A.</div>
-                        <div class="paper-journal">Ingeniare. Revista Chilena De Ingeniería, 33.</div>
+                    <div class="paper-item">
+                        <div class="paper-year">2025</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Machine Learning Techniques in Microservices: A Systematic Mapping
+                                <span class="badge">Scopus</span>
+                            </div>
+                            <div class="paper-authors">Brito D, Sotelo J, Márquez G, Visconti M.</div>
+                            <div class="paper-journal">2025 L Latin American Computer Conference (CLEI), Chilean
+                                Computer Science Conference (JCC)... IEEE. (In press)</div>
+                        </div>
+                    </div>
+
+                    <!-- 2024 Proc -->
+                    <div class="paper-item">
+                        <div class="paper-year">2024</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Pressure Recovery Distance Measured Non-invasively Using 4D Flow
+                                MRI Is Prolonged in Neonates with Coarctation of the Aorta <span
+                                    class="badge">WoS</span></div>
+                            <div class="paper-authors">Abuzinadah, R., Fernandes, J., Panayiotou, H., Shelley, D.,
+                                Broadbent, D., Jin, N., De Vecchi, A., Lamata, P., Sotelo, J., & Bissell, M.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. CMR 2024, London,
+                                UK, 26, 100132. <a href="https://doi.org/10.1016/j.jocmr.2024.100132" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1016/j.jocmr.2024.100132</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2024</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Segmentation of 4D Flow MR image obtained by Cardiovascular
+                                Magnetic Resonance Imaging <span class="badge">Scopus</span></div>
+                            <div class="paper-authors">Ponce A, Salas R, Garcia J, Uribe S, Sotelo, J.</div>
+                            <div class="paper-journal">2024 IEEE International Conference on Automation/XXVI Congress of
+                                the Chilean Association of Automatic Control (ICA-ACCA), IEEE. <a
+                                    href="https://doi.org/10.1109/ICA-ACCA62622.2024.10766455" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1109/ICA-ACCA62622.2024.10766455</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2024</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Automation of 4D Flow MR Image Processing Obtained by
+                                Cardiovascular Magnetic Resonance Imaging <span class="badge">Scopus</span></div>
+                            <div class="paper-authors">Ponce A, Salas R, Garcia J, Uribe S, Sotelo, J.</div>
+                            <div class="paper-journal">2024 L Latin American Computer Conference (CLEI), IEEE. <a
+                                    href="https://doi.org/10.1109/CLEI64178.2024.10700580" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1109/CLEI64178.2024.10700580</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2024</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Prediction of Peak-to-Peak Pressure Gradient in Patients with
+                                Aortic Coarctation Using Physics-Informed Neural Networks <span
+                                    class="badge">Scopus</span></div>
+                            <div class="paper-authors">Jara S, Salas R, Ñanculef R, Valverde I, Uribe S, Sotelo, J.
+                            </div>
+                            <div class="paper-journal">2024 L Latin American Computer Conference (CLEI), IEEE. <a
+                                    href="https://doi.org/10.1109/CLEI64178.2024.10700502" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1109/CLEI64178.2024.10700502</a></div>
+                        </div>
+                    </div>
+
+                    <!-- 2023 & older Proc -->
+                    <div class="paper-item">
+                        <div class="paper-year">2023</div>
+                        <div class="paper-content">
+                            <div class="paper-title">A Deep Learning Classifier Using Sliding Patches For Detection of
+                                Mammographical Findings <span class="badge">Scopus</span></div>
+                            <div class="paper-authors">Mellado D, Querales M, Sotelo J, Godoy E, Pardo F, Lever S,
+                                Chabert S, Salas R.</div>
+                            <div class="paper-journal">2023 19th International Symposium on Medical Information
+                                Processing and Analysis (SIPAIM), Mexico City, Mexico. <a
+                                    href="https://doi.org/10.1109/SIPAIM56729.2023.10373511" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1109/SIPAIM56729.2023.10373511</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Automatic segmentation of brain tumor in multi-contrast magnetic
+                                resonance using deep neural network <span class="badge">Scopus</span></div>
+                            <div class="paper-authors">Cavieres E, Tejos C, Salas R, Sotelo J.</div>
+                            <div class="paper-journal">Proc. SPIE 12567, 18th International Symposium on Medical
+                                Information Processing and Analysis, 125670B. <a
+                                    href="https://doi.org/10.1117/12.2670375" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1117/12.2670375</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">VENTSEG: efficient open source framework for ventricular
+                                segmentation <span class="badge">Scopus</span></div>
+                            <div class="paper-authors">León A, Herrera R, Urbina J, Salas R, Uribe S, Sotelo J.</div>
+                            <div class="paper-journal">Proc. SPIE 12567, 18th International Symposium on Medical
+                                Information Processing and Analysis, 125670Q. <a
+                                    href="https://doi.org/10.1117/12.2669932" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1117/12.2669932</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2022</div>
+                        <div class="paper-content">
+                            <div class="paper-title">A named entity recognition framework using transformers to identify
+                                relevant clinical findings from mammographic radiological reports <span
+                                    class="badge">Scopus</span></div>
+                            <div class="paper-authors">Godoy E, Chabert S, Querales M, Sotelo J, et al.</div>
+                            <div class="paper-journal">Proc. SPIE 12567, 18th International Symposium on Medical
+                                Information Processing and Analysis, 125670X. <a
+                                    href="https://doi.org/10.1117/12.2670228" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1117/12.2670228</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2015</div>
+                        <div class="paper-content">
+                            <div class="paper-title">A realistic MR compatible Aortic Phantom to validate hemodynamic
+                                parameters from MRI data: aortic coarctation patient comparison using catheterization
+                                <span class="badge">WoS</span>
+                            </div>
+                            <div class="paper-authors">Urbina J, Sotelo J, Tejos C, Irarrazaval P, Andia ME, Razavi R,
+                                Valverde I, Uribe S.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 18th Annual SCMR
+                                Scientific Sessions, Nice, France. <a
+                                    href="https://doi.org/10.1186/1532-429X-17-S1-P199" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1186/1532-429X-17-S1-P199</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2015</div>
+                        <div class="paper-content">
+                            <div class="paper-title">3D Quantification of hemodynamics parameters of pulmonary artery
+                                and aorta using finite-element interpolations in 4D flow MR data <span
+                                    class="badge">WoS</span></div>
+                            <div class="paper-authors">Sotelo J, Urbina J, Valverde I, Tejos C, Irarrazaval P, Hurtado
+                                DE, Uribe S.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 18th Annual SCMR
+                                Scientific Sessions, Nice, France. <a href="https://doi.org/10.1186/1532-429X-17-S1-Q27"
+                                    target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1186/1532-429X-17-S1-Q27</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2015</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Pressure gradient prediction in aortic coarctation using a
+                                computational-fluid-dynamics model: validation against invasive pressure catheterization
+                                at rest and pharmacological stress <span class="badge">WoS</span></div>
+                            <div class="paper-authors">Sotelo J, Velverde I, Beerbaum P, Greil G, Schaeffter T, Razavi
+                                R, Hurtado DE, Uribe S, Figueroa CA.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 18th Annual SCMR
+                                Scientific Sessions, Nice, France. <a href="https://doi.org/10.1186/1532-429X-17-S1-Q78"
+                                    target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1186/1532-429X-17-S1-Q78</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2014</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Quantification of wall shear stress using finite-element
+                                interpolations in multidimensional phase contrast MR data of the thoracic aorta <span
+                                    class="badge">WoS</span></div>
+                            <div class="paper-authors">Sotelo J, Urbina J, Ortiz E, Tejos C, Valverde I, Hurtado DE,
+                                Uribe S.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 17th Annual SCMR
+                                Scientific Sessions, New Orleans, LA, USA. <a
+                                    href="https://doi.org/10.1186/1532-429X-16-S1-P371" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1186/1532-429X-16-S1-P371</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2014</div>
+                        <div class="paper-content">
+                            <div class="paper-title">3D quantification of wall shear stress using finite-element
+                                interpolations from 4D flow MR data in the Thoracic Aorta <span class="badge">WoS</span>
+                            </div>
+                            <div class="paper-authors">Sotelo J, Urbina J, Ortiz E, Tejos C, Valverde I, Hurtado DE,
+                                Uribe S.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 17th Annual SCMR
+                                Scientific Sessions, New Orleans, LA, USA. <a
+                                    href="https://doi.org/10.1186/1532-429X-16-S1-P356" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1186/1532-429X-16-S1-P356</a></div>
+                        </div>
+                    </div>
+                    <div class="paper-item">
+                        <div class="paper-year">2012</div>
+                        <div class="paper-content">
+                            <div class="paper-title">Normal Values of Wall Shear Stress in the Pulmonary Artery from 4D
+                                flow data <span class="badge">WoS</span></div>
+                            <div class="paper-authors">Sotelo J, Bächler P, Chabert S, Hurtado D, Irarrazaval P, Tejos
+                                C, Uribe S.</div>
+                            <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 15th Annual SCMR
+                                Scientific Sessions, Orlando, FL, USA. <a
+                                    href="https://doi.org/10.1186/1532-429X-14-S1-W66" target="_blank"
+                                    rel="noopener noreferrer">https://doi.org/10.1186/1532-429X-14-S1-W66</a></div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 2025 -->
-                <div class="paper-item">
-                    <div class="paper-year">2025</div>
-                    <div class="paper-content">
-                        <div class="paper-title">AI Applied to Cardiac Magnetic Resonance for Precision Medicine in Coronary Artery Disease: A Systematic Review <span class="badge">WoS - IF: 2.3</span></div>
-                        <div class="paper-authors">Jiménez-Jara, C., Salas, R., Díaz-Navarro, R., Chabert, S., Andia, M. E., Vega, J., Urbina, J., Uribe, S., Sekine, T., Raimondi, F., & Sotelo, J.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Development and Disease, 12(9), 345.</div>
-                    </div>
+                <h3 class="subsection-title">Conferences & Presentations</h3>
+                <div class="bio-text">
+                    <p>Throughout his career, Dr. Sotelo has been an active contributor to the scientific community,
+                        presenting his research at numerous prestigious national and international conferences. His work
+                        has been featured in over 80 presentations and workshops, including multiple editions of the
+                        ISMRM Annual Meeting & Exhibition across the globe (e.g., Singapore, Honolulu, Paris, Montreal,
+                        London, and Toronto), the SCMR Annual Scientific Sessions, and EuroCMR. His presentations cover
+                        a wide array of topics, from advanced 4D Flow MRI quantification methods, finite element
+                        methods, and AI applied to medical imaging, to hands-on workshops and clinical symposiums.
+                        Additionally, he frequently participates in national events such as the Chilean Congress of
+                        Radiology, the Chilean Congress of Cardiology and Cardiovascular Surgery, and various
+                        interdisciplinary engineering and biomechanics symposiums, highlighting his commitment to
+                        advancing medical imaging technologies and clinical practices both in Chile and internationally.
+                    </p>
                 </div>
-                <div class="paper-item">
-                    <div class="paper-year">2025</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Physics-Informed Neural Network for Modeling the Pulmonary Artery Blood Pressure from Magnetic Resonance Images: A Reduced-Order Navier-Stokes Model <span class="badge">WoS - IF: 3.9</span></div>
-                        <div class="paper-authors">Jara, S., Sotelo, J., Ortiz-Puerta, D., Estévez, P. A., Uribe, S., Chabert, S., & Salas, R.</div>
-                        <div class="paper-journal">Biomedicines, 13(9), 2058.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2025</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Identifying Clinically Relevant Findings in Breast Cancer using Deep Learning and Feature Attribution on Local Views from High-Resolution Mammography <span class="badge">WoS - IF: 3.3</span></div>
-                        <div class="paper-authors">Mellado, D., Mayeta, L., Sotelo, J., Querales, M., Godoy, E., Lever, S., Pardo, F., Chabert, S., Salas, R.</div>
-                        <div class="paper-journal">Frontiers in Oncology. Volume 15 - 2025</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2025</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Simultaneous acquisition of water, fat, and velocity images using a Phase-Contrast T2*-IDEAL method <span class="badge">WoS - IF: 2.7</span></div>
-                        <div class="paper-authors">Denecken, E., Arrieta, C., Sotelo, J., Mella, H., & Uribe, S.</div>
-                        <div class="paper-journal">NMR in Biomedicine, 38(6).</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2025</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Radiomics-Driven Neuro-Fuzzy Framework for Rule Generation to Enhance Explainability in MRI-Based Brain Tumor Segmentation <span class="badge">WoS - IF: 2.5</span></div>
-                        <div class="paper-authors">Mayeta L, Cavieres E, Salinas M, Mellado D, Ponce S, Torres F, Chabert S, Querales M, Sotelo J, Salas R.</div>
-                        <div class="paper-journal">Frontiers in Neuroinformatics Volume 19.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2025</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Simultaneous acquisition of water, fat and velocity images using a phase-contrast 3p-Dixon method <span class="badge">WoS - IF: 2.1</span></div>
-                        <div class="paper-authors">Denecken E, Arrieta C, Hernando D, Sotelo J, Mella H, Uribe S.</div>
-                        <div class="paper-journal">Magnetic Resonance Imaging, 118:110341 (2025).</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2025</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Characterising growth and early haemodynamic inefficiencies: Phase-Contrast MRI analysis of the aorta in post-Fontan Hypoplastic left heart syndrome <span class="badge">Non-Indexed</span></div>
-                        <div class="paper-authors">Fernandes, J. F., Bellsham-Revell, H., Sattwika, P. D., Ghahfarokhi, M., Yap, H. Y., Kiely, A., Ferrez, X. M., Camara, O., Sotelo, J., Wong, J., Barron, D., Salih, C., Pushparajah, K., Lewandowski, A. J., Lamata, P., & De Vecchi, A.</div>
-                        <div class="paper-journal">JTCVS Structural and Endovascular, 100086.</div>
-                    </div>
-                </div>
-
-                <!-- 2024 -->
-                <div class="paper-item">
-                    <div class="paper-year">2024</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Impact of 4D- Flow CMR parameters on functional evaluation of Fontan circulation <span class="badge">WoS - IF: 1.838</span></div>
-                        <div class="paper-authors">Ait Ali L, Martini N, Listo E, Valenti E, Sotelo J, Salvadori S, Passino C, Monteleone A, Stagnaro N, Trocchio G, Marrone C, Raimondi F, Catapano G, Festa P.</div>
-                        <div class="paper-journal">Pediatr Cardiol (2024).</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2024</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Biomedical engineering research in Chilean universities - A bibliometric analysis <span class="badge">WoS - IF: 0.78</span></div>
-                        <div class="paper-authors">Vásquez-Salgado, J., L. Figueroa, R., Sotelo, J., & Villalobos-Cid, M.</div>
-                        <div class="paper-journal">IEEE Latin America Transactions, 22(4), 339-351.</div>
-                    </div>
-                </div>
-
-                <!-- 2023 -->
-                <div class="paper-item">
-                    <div class="paper-year">2023</div>
-                    <div class="paper-content">
-                        <div class="paper-title">4D Flow cardiovascular magnetic resonance consensus statement: 2023 update <span class="badge">WoS - IF: 6.903</span></div>
-                        <div class="paper-authors">Bissell, M.M., Raimondi, F., Ait Ali, L. et al.</div>
-                        <div class="paper-journal">J Cardiovasc Magn Reson 25, 40 (2023).</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2023</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Aortic Stenosis: Haemodynamic Benchmark and Metric Reliability Study <span class="badge">WoS - IF: 3.216</span></div>
-                        <div class="paper-authors">Gill H, Fernandes JF, Nio A, Dockerill C, Shah N, Ahmed N, Raymond J, Wang S, Sotelo J, Urbina J, Uribe S, Rajani R, Rhode K, Lamata P.</div>
-                        <div class="paper-journal">J. of Cardiovasc. Trans. Res. (2023).</div>
-                    </div>
-                </div>
-
-                <!-- 2022 -->
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Mechanics-informed snakes isogeometric analysis (MISIGA): an image-based method for the estimation of local deformation and strain in blood vessels <span class="badge">WoS - IF: 7.963</span></div>
-                        <div class="paper-authors">Cox A, Ortiz-Puerta D, Sotelo J, Uribe S, Hurtado DE.</div>
-                        <div class="paper-journal">Engineering with Computers 38, 4043-4060 (2022).</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Impact of Respiratory Gating on Hemodynamic Parameters from 4D Flow MRI <span class="badge">WoS - IF: 2.679</span></div>
-                        <div class="paper-authors">Denecken E, Sotelo J, Arrieta C, Andia ME, Uribe S.</div>
-                        <div class="paper-journal">Applied Sciences. 2022, 12, 2943.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Identification of hemodynamic biomarkers for bicuspid aortic valve induced aortic dilation using machine learning <span class="badge">WoS - IF: 6.698</span></div>
-                        <div class="paper-authors">Franco P, Sotelo J, Guala A, Dux-Santoy L, Evangelista A, Rodríguez-Palomares J, Mery D, Salas R, Uribe S.</div>
-                        <div class="paper-journal">Computers in Biology and Medicine. 2022 Feb; 141:105147.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Altered Aortic Hemodynamics and Relative Pressure in Patients with Dilated Cardiomyopathy <span class="badge">WoS - IF: 3.554</span></div>
-                        <div class="paper-authors">Marlevi D, Mariscal-Harana J, Burris NS, Sotelo J, Ruijsink B, Hadjicharalambous M, Asner L, Sammut E, Chabiniok R, Uribe S, Winter R, Lamata P, Alastruey J, Nordsletten D.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Translational Research. 2022 Aug;15(4):692-707.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Fully Three-Dimensional Hemodynamic Characterization of Altered Blood Flow in Bicuspid Aortic Valve Patients With Respect to Aortic Dilatation: A Finite Element Approach <span class="badge">WoS - IF: 6.05</span></div>
-                        <div class="paper-authors">Sotelo J, Franco P, Guala A, Dux-Santoy L, Ruiz-Muñoz A, Evangelista A, Mella H, Mura J, Hurtado DE, Rodríguez-Palomares JF, Uribe S.</div>
-                        <div class="paper-journal">Frontiers in Cardiovascular Medicine. 2022 May 18;9:885338.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Tissue engineered in-vitro vascular patch fabrication using hybrid 3D printing and electrospinning <span class="badge">WoS - IF: 10.761</span></div>
-                        <div class="paper-authors">Mayoral I, Bevilacqua E, Gómez G, Hmadcha A, González-Loscertales I, Reina E, Sotelo J, Domínguez A, Pérez-Alcántara P, Smani Y, González-Puertas P, Mendez A, Uribe S, Smani T, Ordoñez A, Valverde I.</div>
-                        <div class="paper-journal">Materials Today Bio. 2022 Apr 14;14:100252.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Assessment of 4D flow MRI's quality by verifying its Navier-Stokes compatibility <span class="badge">WoS - IF: 2.648</span></div>
-                        <div class="paper-authors">Garay J, Mella H, Sotelo J, Cárcamo C, Uribe S, Bertoglio C, Mura J.</div>
-                        <div class="paper-journal">International Journal for Numerical Methods in Biomedical Engineering. 2022 Jun;38(6):e3603.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Non-invasive local pulse wave velocity using 4D-flow MRI <span class="badge">WoS - IF: 3.88</span></div>
-                        <div class="paper-authors">Mura J, Sotelo J, Mella H, Wong J, Hussain T, Ruijsink B, Uribe S.</div>
-                        <div class="paper-journal">Biomedical Signal Processing and Control. 2022 Jan; 71(B):103259.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Three-dimensional quantification of circulation using finite element methods in 4D Flow MR Data of the Thoracis Aorta <span class="badge">WoS - IF: 4.668</span></div>
-                        <div class="paper-authors">Sotelo J, Bissell MM, Jiang Y, Mella H, Mura J, Uribe S.</div>
-                        <div class="paper-journal">Magnetic Resonance in Medicine. 2022 Feb;87(2):1036-1045.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Impact of aortic arch curvature in flow hemodynamics in patients with transposition of the great arteries after arterial switch operation <span class="badge">WoS - IF: 9.13</span></div>
-                        <div class="paper-authors">Sotelo J, Valverde I, Martins D, Bonnet D, Boddaert N, Pushparajan K, Uribe S, Raimondi F.</div>
-                        <div class="paper-journal">European Heart Journal - Cardiovascular Imaging. 2022 Feb 22;23(3):402-411.</div>
-                    </div>
-                </div>
-
-                <!-- 2021 -->
-                <div class="paper-item">
-                    <div class="paper-year">2021</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Comprehensive Assessment of Left Intraventricular Hemodynamics Using a Finite Element Method: An Application to Dilated Cardiomyopathy Patients <span class="badge">WoS - IF: 2.679</span></div>
-                        <div class="paper-authors">Franco P, Sotelo J, Montalba C, Ruijsink B, Kerfoot E, Nordsletten D, Mura J, Hurtado D, Uribe S.</div>
-                        <div class="paper-journal">Applied Sciences. 2021; 11(23):11165.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2021</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Validation of 4D Flow based relative pressure maps in aortic flows <span class="badge">WoS - IF: 13.83</span></div>
-                        <div class="paper-authors">Nolte D, Urbina J, Sotelo J, Soka L, Montalba C, Valverde I, Osses A, Uribe S, Bertoglio C.</div>
-                        <div class="paper-journal">Medical Image Analysis. 2021 Dec;74:102195.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2021</div>
-                    <div class="paper-content">
-                        <div class="paper-title">A comprehensive comparison between shortest-path HARP refinement, SinMod, and DENSEanalysis processing tools applied to CSPAMM and DENSE images <span class="badge">WoS - IF: 2.546</span></div>
-                        <div class="paper-authors">Mella H, Mura J, Sotelo J, Uribe S.</div>
-                        <div class="paper-journal">Magnetic Resonance Imaging, 2021 Nov;83:14-26.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2021</div>
-                    <div class="paper-content">
-                        <div class="paper-title">False lumen pressure estimation in type B aortic dissection using 4D flow cardiovascular magnetic resonance: comparisons with aortic growth <span class="badge">WoS - IF: 6.903</span></div>
-                        <div class="paper-authors">Marlevi D, Sotelo J, Grogan-Kaylor R, Ahmed Y, Uribe S, Patel HJ, Edelman ER, Nordsletten DA, Burris NS.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance 23, 51 (2021).</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2021</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Abnormal vortex formation in the right pulmonary artery after the arterial switch operation <span class="badge">WoS - IF: 0.78</span></div>
-                        <div class="paper-authors">Warmerdam E, van Assen HC, Sotelo J, Grotenhuis HB.</div>
-                        <div class="paper-journal">European Heart Journal - Case Reports. 2021 Jan 15;5(1):ytaa549.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2021</div>
-                    <div class="paper-content">
-                        <div class="paper-title">HARP-I: A Harmonic Phase Interpolation Method for the Estimation of Motion from Tagged MR Images <span class="badge">WoS - IF: 10.05</span></div>
-                        <div class="paper-authors">Mella H, Mura J, Wang H, Taylor MD, Chabiniok R, Tintera J, Sotelo J, Uribe S.</div>
-                        <div class="paper-journal">IEEE transactions on medical imaging. 2021 Apr;40(4):1240-1252.</div>
-                    </div>
-                </div>
-
-                <!-- 2020 -->
-                <div class="paper-item">
-                    <div class="paper-year">2020</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Response by Dux-Santoy et al to Letter Regarding Article, "Low and Oscillatory Wall Shear Stress Is Not Related to Aortic Dilation..." <span class="badge">WoS - IF: 10.51</span></div>
-                        <div class="paper-authors">Dux-Santoy L, Guala A, Sotelo J, Uribe S, Teixidó-Turà G, Evangelista A, Rodríguez-Palomares JF.</div>
-                        <div class="paper-journal">Arteriosclerosis, Thrombosis, and Vascular Biology. 2020 Apr;40(4):e116-e117.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2020</div>
-                    <div class="paper-content">
-                        <div class="paper-title">False lumen ejection fraction predicts growth in type B aortic dissection: preliminary results <span class="badge">WoS - IF: 4.191</span></div>
-                        <div class="paper-authors">Burris NS, Nordsletten DA, Sotelo JA, Grogan-Kaylor R, Houben IB, Figueroa CA, Uribe S, Patel HJ.</div>
-                        <div class="paper-journal">European Journal of Cardio-Thoracic Surgery, 2020 May 1;57(5):896-903.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2020</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Low and Oscillatory Wall Shear Stress Is Not Related to Aortic Dilation in Patients With Bicuspid Aortic Valve: A Time-Resolved 3-Dimensional Phase-Contrast MRI Study <span class="badge">WoS - IF: 10.51</span></div>
-                        <div class="paper-authors">Dux-Santoy L, Guala A, Sotelo J, Uribe S, Teixidó-Turà G, Ruiz-Muñoz A, Hurtado DE, Valente F, Galian-Gay L, Gutiérrez L, González-Alujas T, Johnson KM, Wieben O, Ferreira I, Evangelista A, Rodríguez-Palomares JF.</div>
-                        <div class="paper-journal">Arteriosclerosis, Thrombosis, and Vascular Biology. 2020 Jan;40(1):e10-e20.</div>
-                    </div>
-                </div>
-
-                <!-- 2018 -->
-                <div class="paper-item">
-                    <div class="paper-year">2018</div>
-                    <div class="paper-content">
-                        <div class="paper-title">3D axial and circumferential wall shear stress from 4D flow MRI data using a finite element method and a laplacian approach <span class="badge">WoS - IF: 4.668</span></div>
-                        <div class="paper-authors">Sotelo J, Dux-Santoy L, Guala A, Rodríguez-Palomares J, Evangelista A, Sing-Long C, Urbina J, Mura J, Hurtado DE, Uribe S.</div>
-                        <div class="paper-journal">Magnetic Resonance in Medicine. 2018 May;79(5):2816-2823.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2018</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Variability of 4D flow parameters when subjected to changes in MRI acquisitions parameters using a realistic thoracic aortic phantom <span class="badge">WoS - IF: 4.668</span></div>
-                        <div class="paper-authors">Montalba C, Urbina J, Sotelo J, Andia ME, Tejos C, Irarrazaval P, Hurtado DE, Valverde I, Uribe S.</div>
-                        <div class="paper-journal">Magnetic Resonance in Medicine. 2018 Apr;79(4):1882-1892.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2018</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Three-dimensional quantification of Vorticity and Helicity from 3D cine PC- MRI using finite element interpolations <span class="badge">WoS - IF: 4.67</span></div>
-                        <div class="paper-authors">Sotelo J, Urbina J, Valverde I, Mura J, Tejos C, Irarrazaval P, Andia ME, Hurtado DE, Uribe S.</div>
-                        <div class="paper-journal">Magnetic Resonance in Medicine. 2018 Jan;79(1):541-553.</div>
-                    </div>
-                </div>
-
-                <!-- 2017 & older -->
-                <div class="paper-item">
-                    <div class="paper-year">2017</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Quantification of pulmonary regurgitation in patients with repaired Tetralogy of Fallot by 2D phase-contrast MRI... <span class="badge">WoS - IF: 1.5</span></div>
-                        <div class="paper-authors">Sotelo J, Bächler P, Urbina J, Crelier G, Toro L, Ferreiro M, Valverde I, Andia M, Tejos C, Irarrazaval P, Uribe S.</div>
-                        <div class="paper-journal">JRSM Cardiovasc Diseases. 2017 Jan-Dec; 6: 2048004017731986.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2016</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Enhancing the Velocity data from 4D flow MR Images by Reducing its Divergence <span class="badge">WoS - IF: 10.05</span></div>
-                        <div class="paper-authors">Mura J, Pino AM, Sotelo J, Valverde I, Tejos C, Andia ME, Irarrazaval P, Uribe S.</div>
-                        <div class="paper-journal">IEEE transactions on medical imaging. 2016 Oct;35(10):2353-2364.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2016</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Realistic aortic phantom to study hemodynamics using MRI and cardiac catheterization in normal and aortic coarctation conditions <span class="badge">WoS - IF: 4.813</span></div>
-                        <div class="paper-authors">Urbina J, Sotelo JA, Springmüller D, Montalba C, Letelier K, Tejos C, Irarrázaval P, Andia ME, Razavi R, Valverde I, Uribe SA.</div>
-                        <div class="paper-journal">Journal of Magnetic Resonance Imaging. 2016 Sep;44(3):683-97.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2016</div>
-                    <div class="paper-content">
-                        <div class="paper-title">3D quantification of wall shear stress and oscillatory shear index using a finite-element method in 3D CINE PC-MRI data of the thoracic aorta <span class="badge">WoS - IF: 10.05</span></div>
-                        <div class="paper-authors">Sotelo J, Urbina J, Valverde I, Tejos C, Irarrazaval P, Andia ME, Uribe S, Hurtado DE.</div>
-                        <div class="paper-journal">IEEE transactions on medical imaging. 2016 Jun;35(6):1475-87.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2015</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Intrahepatic portal vein blood volume estimated by non-contrast Magnetic Resonance Imaging for the assessment of portal hypertension <span class="badge">WoS - IF: 2.546</span></div>
-                        <div class="paper-authors">Aguirre-Reyes DF, Sotelo JA, Arab JP, Arrese M, Tejos R, Irarrazaval P, Tejos C, Uribe SA, Andia ME.</div>
-                        <div class="paper-journal">Magnetic Resonance Imaging. 2015 Oct;33(8):970-7.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2015</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Quantification of wall shear stress using a finite-element method in multidimensional phase contrast MR data of the thoracic aorta <span class="badge">WoS - IF: 1.606</span></div>
-                        <div class="paper-authors">Sotelo J, Urbina J, Valverde I, Tejos C, Irarrázaval P, Hurtado DE, Uribe S.</div>
-                        <div class="paper-journal">Journal of Biomechanics. 2015 Jul 16;48(10):1817-27.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2015</div>
-                    <div class="paper-content">
-                        <div class="paper-title">3D printed models for planning endovascular stenting in transverse aortic arch hypoplasia: 3D Cardiovascular Model Simulation <span class="badge">WoS - IF: 2.585</span></div>
-                        <div class="paper-authors">Valverde I, Gomez G, Coserria JF, Suarez-Mejias C, Uribe S, Sotelo J, Velasco MN, Santos De Soto J, Hosseinpour AR, Gomez-Cia T.</div>
-                        <div class="paper-journal">Catheterization and Cardiovascular Interventions. 2015 May;85(6):1006-12.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2013</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Assessment of normal flow patterns in the pulmonary circulation by using 4D magnetic resonance velocity mapping <span class="badge">WoS - IF: 2.546</span></div>
-                        <div class="paper-authors">Bächler P, Pinochet N, Sotelo J, Crelier G, Irarrazaval P, Tejos C, Uribe S.</div>
-                        <div class="paper-journal">Magnetic Resonance Imaging. 2013 Feb;31(2):178-88.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2012</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Medición de presiones relativas en aorta torácica y arteria pulmonar de voluntarios sanos y pacientes con Tetralogía de Fallot reparada utilizando la secuencia de 4D Flow de resonancia magnética cardiaca <span class="badge">SCIELO</span></div>
-                        <div class="paper-authors">Urbina J, Sotelo J, Tejos C, Hurtado D, Andía M, Irarrázaval P, Uribe S.</div>
-                        <div class="paper-journal">Revista Chilena de Radiología 2012;18(4):157-162.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2012</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Análisis cuantitativo de variables hemodinámicas de la aorta obtenidas de 4D Flow <span class="badge">SCIELO</span></div>
-                        <div class="paper-authors">Sotelo J, Salas R, Tejos C, Chabert S, Uribe S.</div>
-                        <div class="paper-journal">Revista Chilena de Radiología 2012;18(2):62-67.</div>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="subsection-title">Conference Proceedings (WoS / Scopus)</h3>
-            <div class="item-list">
-                <!-- 2026 Proc -->
-                <div class="paper-item">
-                    <div class="paper-year">2026</div>
-                    <div class="paper-content">
-                        <div class="paper-title">4D Flow MRI MATLAB Toolbox <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Sotelo, J., Uribe, S., Hurtado, D., Mura, J., Mella, H., Marlevi, D., Lamata, P., & Fernandes, J.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 29th Annual SCMR Scientific Sessions, Rio de Janeiro, Brasil.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2026</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Prediction of peak-to-peak pressure gradient in patients with aortic coarctation using Physics-Informed Neural Networks from Magnetic Resonance Images <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Jara, S., Galarce, F., Mella, H., Ñanculef, R., Salas, R., Beerbaum, P., Grotenhuis, H., Marlevi, D., Valverde, I., Uribe, S., & Sotelo, J.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 29th Annual SCMR Scientific Sessions, Rio de Janeiro, Brasil.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2026</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Effect of blood rheology and hematocrit on the estimation of hemodynamic parameters in hypertrophic cardiomyopathy <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Sotelo, J., Mella, H., Galarce, F., Velasquez, C., Uribe, S., Sekine, T., & Castillo, E.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 29th Annual SCMR Scientific Sessions, Rio de Janeiro, Brasil.</div>
-                    </div>
-                </div>
-
-                <!-- 2025 Proc -->
-                <div class="paper-item">
-                    <div class="paper-year">2025</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Non-invasively measured pressure drops are higher in neonates with coarctation of the aorta (CoA) compared to reference controls <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Abuzinadah, R. F., Sotelo, J., Broadbent, D., Cash, M. L., Shelley, D., Jin, N., Plein, S., Marlevi, D., & Bissell, M. M.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 28th Annual SCMR Scientific Sessions, Washington DC, USA.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2025</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Machine Learning Techniques in Microservices: A Systematic Mapping <span class="badge">Scopus</span></div>
-                        <div class="paper-authors">Brito D, Sotelo J, Márquez G, Visconti M.</div>
-                        <div class="paper-journal">2025 L Latin American Computer Conference (CLEI), Chilean Computer Science Conference (JCC)... IEEE.</div>
-                    </div>
-                </div>
-
-                <!-- 2024 Proc -->
-                <div class="paper-item">
-                    <div class="paper-year">2024</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Pressure Recovery Distance Measured Non-invasively Using 4D Flow MRI Is Prolonged in Neonates with Coarctation of the Aorta <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Abuzinadah, R., Fernandes, J., Panayiotou, H., Shelley, D., Broadbent, D., Jin, N., De Vecchi, A., Lamata, P., Sotelo, J., & Bissell, M.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. CMR 2024, London, UK.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2024</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Segmentation of 4D Flow MR image obtained by Cardiovascular Magnetic Resonance Imaging <span class="badge">Scopus</span></div>
-                        <div class="paper-authors">Ponce A, Salas R, Garcia J, Uribe S, Sotelo, J.</div>
-                        <div class="paper-journal">2024 IEEE International Conference on Automation/XXVI Congress of the Chilean Association of Automatic Control (ICA-ACCA), IEEE.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2024</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Automation of 4D Flow MR Image Processing Obtained by Cardiovascular Magnetic Resonance Imaging <span class="badge">Scopus</span></div>
-                        <div class="paper-authors">Ponce A, Salas R, Garcia J, Uribe S, Sotelo, J.</div>
-                        <div class="paper-journal">2024 L Latin American Computer Conference (CLEI), IEEE.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2024</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Prediction of Peak-to-Peak Pressure Gradient in Patients with Aortic Coarctation Using Physics-Informed Neural Networks <span class="badge">Scopus</span></div>
-                        <div class="paper-authors">Jara S, Salas R, Ñanculef R, Valverde I, Uribe S, Sotelo, J.</div>
-                        <div class="paper-journal">2024 L Latin American Computer Conference (CLEI), IEEE.</div>
-                    </div>
-                </div>
-
-                <!-- 2023 & older Proc -->
-                <div class="paper-item">
-                    <div class="paper-year">2023</div>
-                    <div class="paper-content">
-                        <div class="paper-title">A Deep Learning Classifier Using Sliding Patches For Detection of Mammographical Findings <span class="badge">Scopus</span></div>
-                        <div class="paper-authors">Mellado D, Querales M, Sotelo J, Godoy E, Pardo F, Lever S, Chabert S, Salas R.</div>
-                        <div class="paper-journal">2023 19th International Symposium on Medical Information Processing and Analysis (SIPAIM), Mexico City, Mexico.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Automatic segmentation of brain tumor in multi-contrast magnetic resonance using deep neural network <span class="badge">Scopus</span></div>
-                        <div class="paper-authors">Cavieres E, Tejos C, Salas R, Sotelo J.</div>
-                        <div class="paper-journal">Proc. SPIE 12567, 18th International Symposium on Medical Information Processing and Analysis, 125670B.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">VENTSEG: efficient open source framework for ventricular segmentation <span class="badge">Scopus</span></div>
-                        <div class="paper-authors">León A, Herrera R, Urbina J, Salas R, Uribe S, Sotelo J.</div>
-                        <div class="paper-journal">Proc. SPIE 12567, 18th International Symposium on Medical Information Processing and Analysis, 125670Q.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2022</div>
-                    <div class="paper-content">
-                        <div class="paper-title">A named entity recognition framework using transformers to identify relevant clinical findings from mammographic radiological reports <span class="badge">Scopus</span></div>
-                        <div class="paper-authors">Godoy E, Chabert S, Querales M, Sotelo J, et al.</div>
-                        <div class="paper-journal">Proc. SPIE 12567, 18th International Symposium on Medical Information Processing and Analysis, 125670X.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2015</div>
-                    <div class="paper-content">
-                        <div class="paper-title">A realistic MR compatible Aortic Phantom to validate hemodynamic parameters from MRI data: aortic coarctation patient comparison using catheterization <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Urbina J, Sotelo J, Tejos C, Irarrazaval P, Andia ME, Razavi R, Valverde I, Uribe S.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 18th Annual SCMR Scientific Sessions, Nice, France.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2015</div>
-                    <div class="paper-content">
-                        <div class="paper-title">3D Quantification of hemodynamics parameters of pulmonary artery and aorta using finite-element interpolations in 4D flow MR data <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Sotelo J, Urbina J, Valverde I, Tejos C, Irarrazaval P, Hurtado DE, Uribe S.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 18th Annual SCMR Scientific Sessions, Nice, France.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2015</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Pressure gradient prediction in aortic coarctation using a computational-fluid-dynamics model: validation against invasive pressure catheterization at rest and pharmacological stress <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Sotelo J, Velverde I, Beerbaum P, Greil G, Schaeffter T, Razavi R, Hurtado DE, Uribe S, Figueroa CA.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 18th Annual SCMR Scientific Sessions, Nice, France.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2014</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Quantification of wall shear stress using finite-element interpolations in multidimensional phase contrast MR data of the thoracic aorta <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Sotelo J, Urbina J, Ortiz E, Tejos C, Valverde I, Hurtado DE, Uribe S.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 17th Annual SCMR Scientific Sessions, New Orleans, LA, USA.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2014</div>
-                    <div class="paper-content">
-                        <div class="paper-title">3D quantification of wall shear stress using finite-element interpolations from 4D flow MR data in the Thoracic Aorta <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Sotelo J, Urbina J, Ortiz E, Tejos C, Valverde I, Hurtado DE, Uribe S.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 17th Annual SCMR Scientific Sessions, New Orleans, LA, USA.</div>
-                    </div>
-                </div>
-                <div class="paper-item">
-                    <div class="paper-year">2012</div>
-                    <div class="paper-content">
-                        <div class="paper-title">Normal Values of Wall Shear Stress in the Pulmonary Artery from 4D flow data <span class="badge">WoS</span></div>
-                        <div class="paper-authors">Sotelo J, Bächler P, Chabert S, Hurtado D, Irarrazaval P, Tejos C, Uribe S.</div>
-                        <div class="paper-journal">Journal of Cardiovascular Magnetic Resonance. 15th Annual SCMR Scientific Sessions, Orlando, FL, USA.</div>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="subsection-title">Conferences & Presentations</h3>
-            <div class="bio-text">
-                <p>Throughout his career, Dr. Sotelo has been an active contributor to the scientific community, presenting his research at numerous prestigious national and international conferences. His work has been featured in over 80 presentations and workshops, including multiple editions of the ISMRM Annual Meeting & Exhibition across the globe (e.g., Singapore, Honolulu, Paris, Montreal, London, and Toronto), the SCMR Annual Scientific Sessions, and EuroCMR. His presentations cover a wide array of topics, from advanced 4D Flow MRI quantification methods, finite element methods, and AI applied to medical imaging, to hands-on workshops and clinical symposiums. Additionally, he frequently participates in national events such as the Chilean Congress of Radiology, the Chilean Congress of Cardiology and Cardiovascular Surgery, and various interdisciplinary engineering and biomechanics symposiums, highlighting his commitment to advancing medical imaging technologies and clinical practices both in Chile and internationally.</p>
-            </div>
-            
-        </section>
-
+            </section>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Julio A. Sotelo Parraguez. All rights reserved.</p>
     </footer>
 
+    <script>
+        // Interactive Tab Switching with URL Hash Synchronization & Keyboard Support
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            function activateTab(targetTabId, updateHash = true) {
+                let targetFound = false;
+
+                tabButtons.forEach(btn => {
+                    const isMatch = btn.getAttribute('data-tab') === targetTabId;
+                    if (isMatch) targetFound = true;
+                    btn.classList.toggle('active', isMatch);
+                    btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+                });
+
+                tabPanes.forEach(pane => {
+                    const isMatch = pane.id === targetTabId;
+                    pane.classList.toggle('active', isMatch);
+                });
+
+                if (targetFound && updateHash) {
+                    const cleanHash = targetTabId.replace('tab-', '');
+                    history.replaceState(null, '', `#${cleanHash}`);
+                }
+            }
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const target = btn.getAttribute('data-tab');
+                    activateTab(target);
+
+                    // Smoothly scroll into view if user is further down
+                    const navWrapper = document.querySelector('.tabs-nav-wrapper');
+                    if (navWrapper && window.scrollY > navWrapper.offsetTop) {
+                        navWrapper.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Hash Router Support on Initial Load & Back/Forward Navigation
+            function handleHashChange() {
+                const rawHash = window.location.hash.toLowerCase().replace('#', '');
+                if (rawHash === 'publications' || rawHash === 'scientific-publications' || rawHash === 'papers') {
+                    activateTab('tab-publications', false);
+                } else if (rawHash === 'proceedings' || rawHash === 'conferences' || rawHash === 'conference-proceedings') {
+                    activateTab('tab-proceedings', false);
+                } else if (rawHash === 'overview' || rawHash === 'biography' || rawHash === 'projects' || rawHash === 'github' || rawHash === 'github-projects') {
+                    activateTab('tab-overview', false);
+                }
+            }
+
+            handleHashChange();
+            window.addEventListener('hashchange', handleHashChange);
+        });
+    </script>
 </body>
+
 </html>
