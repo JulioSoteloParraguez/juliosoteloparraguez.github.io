@@ -1,7 +1,7 @@
 # Dr. Julio A. Sotelo Parraguez
 
 <p align="left">
-  <strong>Assistant Professor</strong> at Universidad Técnica Federico Santa María (UTFSM)<br>
+  <strong>Associate Professor</strong> at Universidad Técnica Federico Santa María (UTFSM)<br>
   <strong>Adjunct Senior Lecturer</strong> at Monash University<br>
   <strong>Principal Investigator</strong> at Millennium Institute for Intelligent Healthcare Engineering (iHEALTH)
 </p>
@@ -14,15 +14,15 @@
 
 ---
 
-## Personal Academic Website
+## 🌐 Personal Academic Website
 
 This repository hosts the source code for my personal academic and research website, deployed via **GitHub Pages**:
 
-**[Visit Website: https://juliosoteloparraguez.github.io](https://juliosoteloparraguez.github.io)**
+👉 **[Visit Website: https://juliosoteloparraguez.github.io](https://juliosoteloparraguez.github.io)**
 
 ---
 
-## Research Interests
+## 🔬 Research Interests
 
 My research focuses on the intersection of medical engineering, computer science, and clinical cardiovascular medicine:
 
@@ -32,13 +32,14 @@ My research focuses on the intersection of medical engineering, computer science
 
 ---
 
-## Featured Open-Source Projects
+## 🛠️ Featured Open-Source Projects
 
 - **[4D-Flow-Matlab-Toolbox](https://github.com/JulioSoteloParraguez/4D-Flow-Matlab-Toolbox)**: A comprehensive MATLAB toolbox and GUI application for non-invasive 3D/4D hemodynamic quantification from 4D Flow MRI data using Finite Element Methods.
+- **[VENTSEG_NEW (VENTSEG 4D)](https://github.com/JulioSoteloParraguez/VENTSEG_NEW)**: An interactive 4D cardiac MRI medical image viewer and deep learning multi-class segmentation suite (PyQt6 & PyTorch / ResNet34-UNet) for automated ventricular segmentation (LV, RV, MYO) and functional biomarker quantification.
 
 ---
 
-## Contact Information
+## 📬 Contact Information
 
 - **Email**: [julio.sotelo@usm.cl](mailto:julio.sotelo@usm.cl)
 - **Institution**: Department of Informatics, Universidad Técnica Federico Santa María, Santiago, Chile.
